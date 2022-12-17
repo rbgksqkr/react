@@ -39,9 +39,17 @@ function App() {
     );
   };
 
+  const onRemove = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
   return (
     <div>
-      <TodoList todos={todos} onInsert={onInsert} onToggle={onToggle} />
+      <TodoList
+        todos={todos}
+        onInsert={onInsert}
+        onToggle={onToggle}
+        onRemove={onRemove}
+      />
     </div>
   );
 }
