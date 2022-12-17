@@ -1,6 +1,7 @@
 .todo-list-item {
     display: flex;
     padding: 10px;
+
     &:nth-child(2n-1) {
         background-color: darkgray;
     }
@@ -8,6 +9,14 @@
         display: flex;
         align-items: center;
         flex: 1;
+        :hover {
+            cursor: pointer;
+        }
+    }
+    
+    .checked {
+        text-decoration: line-through;
+        color: rgb(195, 187, 187);
     }
 
     .remove {
@@ -16,5 +25,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        :hover {
+            cursor: pointer;
+            color: red;
+        }
     }
 }

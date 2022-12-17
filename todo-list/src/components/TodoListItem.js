@@ -3,7 +3,7 @@ import "./TodoListItem.scss";
 const TodoListItem = ({ todo }) => {
   return (
     <div className="todo-list-item">
-      <div className="check-box">
+      <div className="check-box checked">
         <input type="checkbox" />
         <div className="text">{todo.text}</div>
       </div>
