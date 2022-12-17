@@ -2,7 +2,7 @@
 
 `npm init react-app todo-list`
 
-`npm install sass react-icons`
+`npm install sass react-icons classnames`
 
 `npm start`
 
