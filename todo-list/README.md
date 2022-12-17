@@ -1,7 +1,9 @@
 # 실행 명령어
 
 `npm init react-app todo-list`
+
 `npm install sass`
+
 `npm start`
 
 # 기능목록
