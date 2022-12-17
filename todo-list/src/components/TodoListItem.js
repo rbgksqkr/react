@@ -6,13 +6,14 @@ import {
 import "./TodoListItem.scss";
 import cn from "classnames";
 
-const TodoListItem = ({ todo }) => {
-  const { checked } = todo;
+const TodoListItem = ({ todo, onToggle }) => {
+  const { id, text, checked } = todo;
+
   return (
     <div className="todo-list-item">
-      <div className={cn("checkbox", { checked })}>
+      <div className={cn("checkbox", { checked })} onClick={() => onToggle(id)}>
         {checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
-        <div className="text">{todo.text}</div>
+        <div className="text">{text}</div>
       </div>
       <div className="remove">
         <MdRemoveCircleOutline />

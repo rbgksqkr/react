@@ -31,9 +31,17 @@ function App() {
     nextId.current += 1;
   };
 
+  const onToggle = (id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, checked: !todo.checked } : todo
+      )
+    );
+  };
+
   return (
     <div>
-      <TodoList todos={todos} onInsert={onInsert} />
+      <TodoList todos={todos} onInsert={onInsert} onToggle={onToggle} />
     </div>
   );
 }
