@@ -1,6 +1,9 @@
 .todo-list-item {
     display: flex;
     padding: 10px;
+    &:nth-child(2n-1) {
+        background-color: darkgray;
+    }
     .check-box {
         display: flex;
         align-items: center;

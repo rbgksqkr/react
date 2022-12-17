@@ -1,0 +1,16 @@
+.todo-insert {
+    display: flex;
+    
+    input {
+        flex: 1;
+        font-size: 20px;
+    }
+
+    button {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+
+        cursor: pointer;
+    }
+}
