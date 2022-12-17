@@ -7,17 +7,17 @@ function App() {
     {
       id: 1,
       text: "리액트",
-      clicked: true,
+      checked: true,
     },
     {
       id: 2,
       text: "리덕스",
-      clicked: true,
+      checked: true,
     },
     {
       id: 3,
       text: "Server Side Rendering",
-      clicked: false,
+      checked: false,
     },
   ]);
   const nextId = useRef(4);
@@ -25,7 +25,7 @@ function App() {
     const todo = {
       id: nextId.current,
       text,
-      clicked: false,
+      checked: false,
     };
     setTodos(todos.concat(todo));
     nextId.current += 1;
