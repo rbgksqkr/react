@@ -1,11 +1,15 @@
 import { MdRemoveCircleOutline } from "react-icons/md";
-
+import "./TodoListItem.scss";
 const TodoListItem = ({ todo }) => {
   return (
-    <div>
-      <input type="checkbox" />
-      <div className="text">{todo.text}</div>
-      <MdRemoveCircleOutline />
+    <div className="todo-list-item">
+      <div className="check-box">
+        <input type="checkbox" />
+        <div className="text">{todo.text}</div>
+      </div>
+      <div className="remove">
+        <MdRemoveCircleOutline />
+      </div>
     </div>
   );
 };

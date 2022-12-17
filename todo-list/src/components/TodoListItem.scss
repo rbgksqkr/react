@@ -1,0 +1,17 @@
+.todo-list-item {
+    display: flex;
+    padding: 10px;
+    .check-box {
+        display: flex;
+        align-items: center;
+        flex: 1;
+    }
+
+    .remove {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
