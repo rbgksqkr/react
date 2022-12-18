@@ -11,7 +11,7 @@ function App() {
     },
     {
       id: 2,
-      text: "리덕스",
+      text: "가나",
       checked: true,
     },
     {
@@ -20,6 +20,7 @@ function App() {
       checked: false,
     },
   ]);
+
   const nextId = useRef(4);
   const onInsert = (text) => {
     const todo = {
@@ -42,6 +43,37 @@ function App() {
   const onRemove = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
+
+  const onIncrease = () => {
+    const newArray = todos.slice().sort(function (a, b) {
+      if (a.text > b.text) return 1;
+      if (a.text < b.text) return -1;
+      return 0;
+    });
+    setTodos(newArray);
+  };
+
+  const onDecrease = () => {
+    const newArray = todos.slice().sort(function (a, b) {
+      if (a.text < b.text) return 1;
+      if (a.text > b.text) return -1;
+      return 0;
+    });
+    setTodos(newArray);
+  };
+
+  const onFinished = () => {
+    const newArray = todos.slice().sort(function (a, b) {
+      return b.checked - a.checked;
+    });
+    setTodos(newArray);
+  };
+
+  const [selected, setSelected] = useState("increase");
+  const onSelect = (value) => {
+    setSelected(value);
+  };
+
   return (
     <div>
       <TodoList
@@ -49,7 +81,19 @@ function App() {
         onInsert={onInsert}
         onToggle={onToggle}
         onRemove={onRemove}
+        onSelect={onSelect}
       />
+      <button
+        onClick={
+          selected === "increase"
+            ? onIncrease
+            : selected === "decrease"
+            ? onDecrease
+            : onFinished
+        }
+      >
+        {selected}
+      </button>
     </div>
   );
 }
