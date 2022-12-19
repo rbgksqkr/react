@@ -69,11 +69,6 @@ function App() {
     setTodos(newArray);
   };
 
-  const [selected, setSelected] = useState("increase");
-  const onSelect = (value) => {
-    setSelected(value);
-  };
-
   return (
     <div>
       <TodoList
@@ -81,19 +76,10 @@ function App() {
         onInsert={onInsert}
         onToggle={onToggle}
         onRemove={onRemove}
-        onSelect={onSelect}
+        onIncrease={onIncrease}
+        onDecrease={onDecrease}
+        onFinished={onFinished}
       />
-      <button
-        onClick={
-          selected === "increase"
-            ? onIncrease
-            : selected === "decrease"
-            ? onDecrease
-            : onFinished
-        }
-      >
-        {selected}
-      </button>
     </div>
   );
 }
