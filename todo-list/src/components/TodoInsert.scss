@@ -3,13 +3,15 @@
     
     input {
         flex: 1;
-        font-size: 20px;
+        font-size: 25px;
+        background-color: black;
+        color: white;
     }
 
     button {
         display: flex;
         align-items: center;
-        font-size: 20px;
+        font-size: 25px;
 
         cursor: pointer;
     }

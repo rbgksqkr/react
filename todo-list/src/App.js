@@ -7,7 +7,7 @@ function App() {
     {
       id: 1,
       text: "리액트",
-      checked: true,
+      checked: false,
     },
     {
       id: 2,
@@ -69,6 +69,10 @@ function App() {
     setTodos(newArray);
   };
 
+  const [selected, setSelected] = useState("increase");
+  const onSelect = (value) => {
+    setSelected(value);
+  };
   return (
     <div>
       <TodoList
@@ -79,6 +83,7 @@ function App() {
         onIncrease={onIncrease}
         onDecrease={onDecrease}
         onFinished={onFinished}
+        onSelect={onSelect}
       />
     </div>
   );

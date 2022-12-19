@@ -10,7 +10,9 @@ const TodoInsert = ({ onInsert }) => {
   };
 
   const onSubmit = (e) => {
-    onInsert(value);
+    if (value.length !== 0) {
+      onInsert(value);
+    }
     setValue("");
     valueRef.current.focus();
     e.preventDefault();

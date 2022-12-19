@@ -11,4 +11,13 @@
         background-color: aqua;
         margin: 0;
     }
+
+    .btn-list {
+        border-bottom: solid 1px black;
+        display: flex;
+        justify-content: flex-start;
+        button {
+            width: 100px;
+        }
+    }
 }

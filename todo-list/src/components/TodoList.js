@@ -10,14 +10,29 @@ const TodoList = ({
   onIncrease,
   onDecrease,
   onFinished,
+  onSelect,
 }) => {
+  const onClick = (e) => {
+    if (e.target.value === "increase") onIncrease();
+    if (e.target.value === "decrease") onDecrease();
+    if (e.target.value === "finished") onFinished();
+    onSelect(e.target.value);
+  };
   return (
     <div className="todo-list">
       <h1>Todo-List</h1>
       <TodoInsert onInsert={onInsert} />
-      <button onClick={onIncrease}>오름차순</button>
-      <button onClick={onDecrease}>내림차순</button>
-      <button onClick={onFinished}>완료</button>
+      <div className="btn-list">
+        <button onClick={onClick} value="increase">
+          오름차순
+        </button>
+        <button onClick={onClick} value="decrease">
+          내림차순
+        </button>
+        <button onClick={onClick} value="finished">
+          완료
+        </button>
+      </div>
 
       {todos.map((todo) => (
         <TodoListItem
