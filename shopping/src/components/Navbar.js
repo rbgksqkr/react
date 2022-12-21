@@ -6,7 +6,6 @@ import {
 import { MdPersonOutline } from "react-icons/md";
 import { useState } from "react";
 import "./Navbar.scss";
-import coupang from "../images/coupang-logo.png";
 
 const Navbar = () => {
   const [value, setValue] = useState("");
@@ -29,7 +28,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="home">
-        <img src={coupang} alt="home" />
+        <img src="images/logo.png" alt="home" />
       </div>
       <form className="search" onSubmit={onSubmit}>
         <input
