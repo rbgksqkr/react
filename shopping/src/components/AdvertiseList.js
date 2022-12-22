@@ -1,5 +1,5 @@
 import AdvertiseListItem from "./AdvertiseListItem";
-import "./AdvertiseList.scss";
+import styles from "./AdvertiseList.module.scss";
 import AdButtonList from "./AdButtonList";
 import { useState } from "react";
 
@@ -34,7 +34,7 @@ const AdvertiseList = () => {
   };
 
   return (
-    <div className="ad-list">
+    <div className={styles.adList}>
       <AdButtonList images={images} onMouseOver={onMouseOver} />
       <div>
         {images.map((image) => (

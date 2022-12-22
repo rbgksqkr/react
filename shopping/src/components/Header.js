@@ -1,16 +1,23 @@
-import "./Header.scss";
+import styles from "./Header.module.scss";
+import Link from "next/link";
 
 const Header = () => {
   return (
-    <div className="header">
-      <div className="left-header">
+    <div className={styles.header}>
+      <div className={styles.leftHeader}>
         <span>즐겨찾기</span>
         <span>입점신청</span>
       </div>
-      <div className="right-header">
-        <span>로그인</span>
-        <span>회원가입</span>
-        <span>고객센터</span>
+      <div className={styles.rightHeader}>
+        <Link href="/login">
+          <a>로그인</a>
+        </Link>
+        <Link href="/signIn">
+          <a>회원가입</a>
+        </Link>
+        <Link href="/center">
+          <a>고객센터</a>
+        </Link>
       </div>
     </div>
   );

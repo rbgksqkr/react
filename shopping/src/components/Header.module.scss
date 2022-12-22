@@ -5,7 +5,7 @@
     font-size: 10px;
     width: 100%;
     height: 32px;
-    .left-header {
+    .leftHeader {
         width: 100px;
         position: absolute;
         left: 250px;
@@ -14,7 +14,7 @@
         cursor: pointer;
     }
 
-    .right-header {
+    .rightHeader {
         width: 150px;
         position: absolute;
         right: 200px;
@@ -22,4 +22,10 @@
         justify-content: space-between;
         cursor: pointer;
     }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
 }
+

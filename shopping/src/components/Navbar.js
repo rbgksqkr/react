@@ -5,7 +5,7 @@ import {
 } from "react-icons/ai";
 import { MdPersonOutline } from "react-icons/md";
 import { useState } from "react";
-import "./Navbar.scss";
+import styles from "./Navbar.module.scss";
 
 const Navbar = () => {
   const [value, setValue] = useState("");
@@ -17,21 +17,21 @@ const Navbar = () => {
     setValue("");
   };
   return (
-    <div className="navbar">
-      <div className="category">
+    <div className={styles.navbar}>
+      <div className={styles.category}>
         <div>
-          <div className="category-image">
+          <div className={styles.categoryImage}>
             <AiOutlineUnorderedList />
           </div>
           <span>카테고리</span>
         </div>
       </div>
-      <div className="home">
+      <div className={styles.home}>
         <img src="images/logo.png" alt="home" />
       </div>
-      <form className="search" onSubmit={onSubmit}>
+      <form className={styles.search} onSubmit={onSubmit}>
         <input
-          className="search-input"
+          className={styles.searchInput}
           placeholder="찾고 싶은 상품을 검색하세요!"
           onChange={onChange}
           value={value}
@@ -41,14 +41,14 @@ const Navbar = () => {
         </button>
       </form>
 
-      <div className="mypage">
-        <div className="mypage-image">
+      <div className={styles.mypage}>
+        <div className={styles.mypageImage}>
           <MdPersonOutline />
         </div>
         <span>마이쿠팡</span>
       </div>
-      <div className="basket">
-        <div className="basket-image">
+      <div className={styles.basket}>
+        <div className={styles.basketImage}>
           <AiOutlineShoppingCart />
         </div>
         <span>장바구니</span>
