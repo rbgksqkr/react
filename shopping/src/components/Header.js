@@ -9,15 +9,9 @@ const Header = () => {
         <span>입점신청</span>
       </div>
       <div className={styles.rightHeader}>
-        <Link href="/login">
-          <a>로그인</a>
-        </Link>
-        <Link href="/signIn">
-          <a>회원가입</a>
-        </Link>
-        <Link href="/center">
-          <a>고객센터</a>
-        </Link>
+        <Link href="/login">로그인</Link>
+        <Link href="/signIn">회원가입</Link>
+        <Link href="/center">고객센터</Link>
       </div>
     </div>
   );
