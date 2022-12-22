@@ -1,16 +1,46 @@
 import AdvertiseListItem from "./AdvertiseListItem";
 import "./AdvertiseList.scss";
 import AdButtonList from "./AdButtonList";
+import { useState } from "react";
 
-const images = ["images/1.jpg", "images/2.jpg", "images/3.jpg"];
 const AdvertiseList = () => {
+  const [images, setImages] = useState([
+    {
+      id: 1,
+      src: "images/1.jpg",
+      active: true,
+    },
+    {
+      id: 2,
+      src: "images/2.jpg",
+      active: false,
+    },
+    {
+      id: 3,
+      src: "images/3.jpg",
+      active: false,
+    },
+  ]);
+
+  // 타깃은 active: true, 나머진 false
+  const onMouseOver = (id) => {
+    setImages(
+      images.map((image) =>
+        image.id === id
+          ? { ...image, active: true }
+          : { ...image, active: false }
+      )
+    );
+  };
+
   return (
     <div className="ad-list">
-      <AdButtonList images={images} />
-
-      {images.map((image, idx) => (
-        <AdvertiseListItem key={idx} image={image} />
-      ))}
+      <AdButtonList images={images} onMouseOver={onMouseOver} />
+      <div>
+        {images.map((image) => (
+          <AdvertiseListItem key={image.id} image={image} />
+        ))}
+      </div>
     </div>
   );
 };

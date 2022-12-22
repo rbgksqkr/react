@@ -1,9 +1,10 @@
 import "./AdButtonItem.scss";
+import cn from "classnames";
 
-const AdButtonItem = ({ className, index, image, onMouseOver }) => {
+const AdButtonItem = ({ image, onMouseOver }) => {
   return (
-    <div className={className}>
-      <img src={image} alt="ad" onMouseOver={() => onMouseOver(index)} />
+    <div className={cn("button-item", { active: image.active })}>
+      <img src={image.src} alt="ad" onMouseOver={() => onMouseOver(image.id)} />
     </div>
   );
 };

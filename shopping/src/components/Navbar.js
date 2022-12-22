@@ -15,7 +15,6 @@ const Navbar = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     setValue("");
-    console.log(value);
   };
   return (
     <div className="navbar">

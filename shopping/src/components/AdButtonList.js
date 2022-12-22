@@ -1,22 +1,10 @@
 import "./AdButtonList.scss";
 import AdButtonItem from "./AdButtonItem";
-import { useState } from "react";
-import cn from "classnames";
-const AdButton = ({ images }) => {
-  const [active, setActive] = useState(0);
-  const onMouseOver = (index) => {
-    setActive(index);
-  };
+const AdButton = ({ images, onMouseOver }) => {
   return (
     <div className="button-list">
-      {images.map((image, index) => (
-        <AdButtonItem
-          key={index}
-          index={index}
-          image={image}
-          className={cn("button-item", { active: index === active })}
-          onMouseOver={onMouseOver}
-        />
+      {images.map((image) => (
+        <AdButtonItem key={image.id} image={image} onMouseOver={onMouseOver} />
       ))}
     </div>
   );
