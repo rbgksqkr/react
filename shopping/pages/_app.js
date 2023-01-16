@@ -5,8 +5,7 @@ const App = ({ Component, pageProps }) => (
   <>
     <Head>
       <meta charset="utf-8" />
-      <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-      <title>React + Nextjs</title>
+      <title>쿠팡!</title>
     </Head>
     <Component {...pageProps} />
   </>
