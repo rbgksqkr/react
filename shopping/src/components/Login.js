@@ -24,9 +24,11 @@ const Login = () => {
   };
   return (
     <div className={style.login}>
-      <div className={style.logo}>
-        <img src="images/logo.png" alt="home" />
-      </div>
+      <Link href="/">
+        <div className={style.logo}>
+          <img src="images/logo.png" alt="home" />
+        </div>
+      </Link>
       <form className={style.loginForm} onSubmit={onSubmit}>
         <div>
           <div>
