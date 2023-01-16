@@ -1,6 +1,7 @@
 import { useState } from "react";
 import style from "./Login.module.scss";
 import Link from "next/link";
+import { AiOutlineMail, AiFillLock } from "react-icons/ai";
 
 const Login = () => {
   const [data, setData] = useState({
@@ -31,18 +32,37 @@ const Login = () => {
       </Link>
       <form className={style.loginForm} onSubmit={onSubmit}>
         <div>
-          <div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginBottom: "15px",
+            }}
+          >
+            <div className={style.userIdIcon}>
+              <AiOutlineMail />
+            </div>
             <input
               className={style.userId}
               type="email"
               name="userId"
               value={data.userId}
               placeholder="아이디(이메일)"
+              autocomplete="off"
               onChange={onChange}
               required
             ></input>
           </div>
-          <div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginBottom: "30px",
+            }}
+          >
+            <div className={style.passwordIcon}>
+              <AiFillLock />
+            </div>
             <input
               className={style.password}
               type="password"
