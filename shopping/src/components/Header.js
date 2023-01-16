@@ -10,7 +10,7 @@ const Header = () => {
       </div>
       <div className={styles.rightHeader}>
         <Link href="/login">로그인</Link>
-        <Link href="/signIn">회원가입</Link>
+        <Link href="/signup">회원가입</Link>
         <Link href="/center">고객센터</Link>
       </div>
     </div>

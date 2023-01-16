@@ -17,7 +17,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "dev": "next",
+    "dev": "next dev",
     "start": "next build && next start",
     "build": "next build"
   },
