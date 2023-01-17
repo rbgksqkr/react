@@ -1,5 +1,5 @@
 import { useState } from "react";
-import style from "./Login.module.scss";
+import styles from "./Login.module.scss";
 import Link from "next/link";
 import { AiOutlineMail, AiFillLock } from "react-icons/ai";
 
@@ -24,13 +24,13 @@ const Login = () => {
     });
   };
   return (
-    <div className={style.login}>
+    <div className={styles.login}>
       <Link href="/">
-        <div className={style.logo}>
+        <div className={styles.logo}>
           <img src="images/logo.png" alt="home" />
         </div>
       </Link>
-      <form className={style.loginForm} onSubmit={onSubmit}>
+      <form className={styles.loginForm} onSubmit={onSubmit}>
         <div>
           <div
             style={{
@@ -39,11 +39,11 @@ const Login = () => {
               marginBottom: "15px",
             }}
           >
-            <div className={style.userIdIcon}>
+            <div className={styles.userIdIcon}>
               <AiOutlineMail />
             </div>
             <input
-              className={style.userId}
+              className={styles.userId}
               type="email"
               name="userId"
               value={data.userId}
@@ -60,11 +60,11 @@ const Login = () => {
               marginBottom: "30px",
             }}
           >
-            <div className={style.passwordIcon}>
+            <div className={styles.passwordIcon}>
               <AiFillLock />
             </div>
             <input
-              className={style.password}
+              className={styles.password}
               type="password"
               name="password"
               required
@@ -73,17 +73,17 @@ const Login = () => {
               onChange={onChange}
             ></input>
           </div>
-          <button className={style.loginBtn} type="submit">
+          <button className={styles.loginBtn} type="submit">
             로그인
           </button>
-          <Link href="/signup" style={{ textDecoration: "none" }}>
-            <button className={style.signupBtn} type="button">
+          <Link href="/signup" styles={{ textDecoration: "none" }}>
+            <button className={styles.signupBtn} type="button">
               회원가입
             </button>
           </Link>
         </div>
       </form>
-      <div className={style.footer}>©Coupang Corp. All rights reserved.</div>
+      <div className={styles.footer}>©Coupang Corp. All rights reserved.</div>
     </div>
   );
 };
