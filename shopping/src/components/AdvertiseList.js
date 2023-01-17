@@ -75,7 +75,7 @@ const AdvertiseList = () => {
           <AdvertiseListItem key={image.id} image={image} />
         ))}
       </div>
-      {currentId}
+      {/* {currentId} */}
     </div>
   );
 };
