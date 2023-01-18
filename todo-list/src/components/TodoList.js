@@ -10,13 +10,11 @@ const TodoList = ({
   onIncrease,
   onDecrease,
   onFinished,
-  onSelect,
 }) => {
   const onClick = (e) => {
     if (e.target.value === "increase") onIncrease();
     if (e.target.value === "decrease") onDecrease();
     if (e.target.value === "finished") onFinished();
-    onSelect(e.target.value);
   };
   return (
     <div className="todo-list">

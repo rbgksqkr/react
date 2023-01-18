@@ -6,17 +6,17 @@ function App() {
   const [todos, setTodos] = useState([
     {
       id: 1,
-      text: "리액트",
-      checked: false,
-    },
-    {
-      id: 2,
-      text: "가나",
+      text: "react hooks",
       checked: true,
     },
     {
+      id: 2,
+      text: "next.js",
+      checked: false,
+    },
+    {
       id: 3,
-      text: "Server Side Rendering",
+      text: "브라우저 렌더링 과정 이해하기",
       checked: false,
     },
   ]);
@@ -69,10 +69,6 @@ function App() {
     setTodos(newArray);
   };
 
-  const [selected, setSelected] = useState("increase");
-  const onSelect = (value) => {
-    setSelected(value);
-  };
   return (
     <div>
       <TodoList
@@ -83,7 +79,6 @@ function App() {
         onIncrease={onIncrease}
         onDecrease={onDecrease}
         onFinished={onFinished}
-        onSelect={onSelect}
       />
     </div>
   );
