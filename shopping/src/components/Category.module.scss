@@ -1,6 +1,20 @@
+.category {
+    width: 100px;
+    height: 100px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: rgb(78, 103, 224);
+    color: white;
+    margin-right: 30px;
+}
+
 .categoryImage {
     font-size: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 5px;
 }

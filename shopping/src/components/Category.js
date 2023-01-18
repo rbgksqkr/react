@@ -4,7 +4,7 @@ import CategoryList from "./CategoryList";
 
 const Category = ({ open }) => {
   return (
-    <>
+    <div className={styles.category}>
       <div>
         <div className={styles.categoryImage}>
           <AiOutlineUnorderedList />
@@ -12,7 +12,7 @@ const Category = ({ open }) => {
         <span>카테고리</span>
       </div>
       {open ? <CategoryList /> : ""}
-    </>
+    </div>
   );
 };
 

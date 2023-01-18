@@ -18,11 +18,7 @@ const Navbar = () => {
 
   return (
     <div className={styles.navbar}>
-      <div
-        className={styles.category}
-        onMouseOver={onMouseOver}
-        onMouseOut={onMouseOut}
-      >
+      <div onMouseOver={onMouseOver} onMouseOut={onMouseOut}>
         <Category open={modalOpen} />
       </div>
       <div className={styles.home}>

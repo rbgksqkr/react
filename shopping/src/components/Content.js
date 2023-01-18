@@ -49,8 +49,15 @@ const Content = () => {
   return (
     <div>
       <div>
-        <div style={{ width: "310px", margin: "auto", marginTop: "20px" }}>
-          <span style={{ fontSize: "20px" }}>오늘의 발견</span>
+        <div
+          style={{
+            width: "320px",
+            margin: "auto",
+            marginTop: "20px",
+            textAlign: "center",
+          }}
+        >
+          <span style={{ fontSize: "20px" }}>오늘의 발견 </span>
           <span style={{ fontSize: "13px" }}>
             | 오늘 쿠팡이 엄선한 가장 HOT한 신상품 !
           </span>
@@ -62,7 +69,14 @@ const Content = () => {
         </div>
       </div>
 
-      <div style={{ width: "310px", margin: "auto", marginTop: "40px" }}>
+      <div
+        style={{
+          width: "320px",
+          margin: "auto",
+          marginTop: "40px",
+          textAlign: "center",
+        }}
+      >
         <span style={{ fontSize: "20px" }}>
           HOT! TREND! 카테고리별 추천상품
         </span>
