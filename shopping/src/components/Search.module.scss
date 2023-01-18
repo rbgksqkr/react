@@ -1,0 +1,23 @@
+.searchForm {
+    display: flex;
+    align-items: center;
+    border: solid 2px blue;
+    margin-right: 10px;
+    font-size: 30px;
+    height: 35px;
+    .searchInput{
+        width: 500px;
+        height: 30px;
+        font-size: 20px;
+        border: none;
+        display: flex;
+    }
+
+    button {
+        all: unset;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

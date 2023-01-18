@@ -1,20 +1,12 @@
-import { AiOutlineShoppingCart, AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import { MdPersonOutline } from "react-icons/md";
 import { useState } from "react";
 import styles from "./Navbar.module.scss";
 import Category from "./Category";
+import Search from "./Search";
 
 const Navbar = () => {
-  const [value, setValue] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
-  const onChange = (e) => {
-    setValue(e.target.value);
-  };
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    setValue("");
-  };
 
   const onMouseOver = (e) => {
     setModalOpen(true);
@@ -36,17 +28,7 @@ const Navbar = () => {
       <div className={styles.home}>
         <img src="images/logo.png" alt="home" />
       </div>
-      <form className={styles.search} onSubmit={onSubmit}>
-        <input
-          className={styles.searchInput}
-          placeholder="찾고 싶은 상품을 검색하세요!"
-          onChange={onChange}
-          value={value}
-        />
-        <button>
-          <AiOutlineSearch />
-        </button>
-      </form>
+      <Search />
 
       <div className={styles.mypage}>
         <div className={styles.mypageImage}>
