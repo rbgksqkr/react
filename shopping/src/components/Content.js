@@ -1,0 +1,75 @@
+import styles from "./Content.module.scss";
+import { useState } from "react";
+import ContentNewItem from "./ContentNewItem";
+
+const Content = () => {
+  const [items, setItems] = useState([
+    {
+      id: 1,
+      name: "청소기",
+      price: "491,470원",
+      src: "images/4.jpg",
+    },
+    {
+      id: 2,
+      name: "청소기",
+      price: "491,470원",
+      src: "images/4.jpg",
+    },
+    {
+      id: 3,
+      name: "청소기",
+      price: "491,470원",
+      src: "images/4.jpg",
+    },
+    {
+      id: 4,
+      name: "청소기",
+      price: "491,470원",
+      src: "images/4.jpg",
+    },
+    {
+      id: 5,
+      name: "청소기",
+      price: "491,470원",
+      src: "images/4.jpg",
+    },
+  ]);
+
+  return (
+    <div>
+      {/* 신상품으로 분리 */}
+
+      <span style={{ fontSize: "20px" }}>오늘의 발견</span>
+      <span style={{ fontSize: "13px" }}>
+        | 오늘 쿠팡이 엄선한 가장 HOT한 신상품 !
+      </span>
+      <br />
+      <div className={styles.contentList}>
+        <div className={styles.contentList}>
+          {items.map((item) => (
+            <ContentNewItem key={item.id} item={item}></ContentNewItem>
+          ))}
+        </div>
+      </div>
+
+      {/* 추천상품으로 분리 */}
+      <div>
+        <span style={{ fontSize: "20px" }}>HOT! TREND</span>
+        <br />
+        <span style={{ fontSize: "20px" }}>카테고리별 추천상품</span>
+        <br />
+
+        <div className={styles.content}>
+          <div className={styles.image}>
+            <img src="images/1.jpg" alt="shampoo" />
+          </div>
+          <div className={styles.name}>두피케어 샴푸</div>
+          <div className={styles.price}>11,340원</div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Content;

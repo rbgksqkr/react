@@ -1,0 +1,30 @@
+.contentList {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+.content {
+    // border: 1px solid black;
+    width: 280px;
+    // height: 200px;
+    
+    .image {
+        width: 280px;
+        height: 150px;
+        // border: 1px solid black;
+        display: flex;
+        justify-content: center;
+    }
+
+    .name {
+        display: flex;
+        justify-content: center;
+    }
+
+    .price {
+        display: flex;
+        justify-content: center;
+    }
+}
