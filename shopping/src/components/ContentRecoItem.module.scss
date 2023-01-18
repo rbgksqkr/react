@@ -1,0 +1,19 @@
+.content {
+    width: 200px;
+    margin-top: 10px;
+    
+    .image {
+        height: 150px;
+        display: flex;
+    }
+
+    .name {
+        display: flex;
+        justify-content: center;
+    }
+
+    .price {
+        display: flex;
+        justify-content: center;
+    }
+}
