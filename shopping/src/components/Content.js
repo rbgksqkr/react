@@ -47,11 +47,48 @@ const Content = () => {
     },
   ]);
 
+  const [target, setTarget] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const nextId = useRef(4);
+
+  // 로딩on -> 1.5초 대기(유사 비동기 처리) -> item key 처리 -> state 추가 -> 로딩off
+  const getMoreItem = async () => {
+    setIsLoaded(true);
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const items = recommendItems.map((item) => {
+      return { ...item, id: nextId.current++ };
+    });
+
+    setRecommendItems((recommendItems) => recommendItems.concat(items));
+    setIsLoaded(false);
+  };
+
+  //
+  const onIntersect = async ([entry], observer) => {
+    if (entry.isIntersecting && !isLoaded) {
+      observer.unobserve(entry.target);
+      await getMoreItem();
+      observer.observe(entry.target);
+    }
+  };
+
+  // intersectionOberserver 객체 생성 -> target element 화면에 70% 보이면 onIntersect 콜백함수 호출 -> cleanner
+  useEffect(() => {
+    let observer;
+    if (target) {
+      observer = new IntersectionObserver(onIntersect, {
+        threshold: 0.7,
+      });
+      observer.observe(target);
+    }
+    return () => observer && observer.disconnect();
+  }, [target]);
+
   return (
     <div>
       <ContentNewList newItems={newItems} />
       <ContentRecommendList recommendItems={recommendItems} />
-      <Loading />
+      <div ref={setTarget}>{isLoaded && <Loading />}</div>
     </div>
   );
 };

@@ -6,8 +6,6 @@ const ContentRecommendList = ({ recommendItems }) => {
     <div>
       <div
         style={{
-          width: "320px",
-          margin: "auto",
           marginTop: "40px",
           textAlign: "center",
         }}
