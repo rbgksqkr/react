@@ -2,7 +2,7 @@
 
 `npm init react-app todo-list`
 
-`npm install sass react-icons react-router-dom classnames next@latest`
+`npm install sass react-icons react-router-dom classnames next@latest react-loading`
 
 `npm start`
 
@@ -21,5 +21,6 @@
   - 일정한 시간 간격으로 광고 자동 슬라이드
 - 상품 정보 리스트
   - 사진, 이름, 가격 표시
+- 로딩창 구현
 - 동적 페이지 스크롤 적용
 - next.js 적용

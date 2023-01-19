@@ -2,6 +2,7 @@ import styles from "./Content.module.scss";
 import { useState, useRef, useEffect } from "react";
 import ContentRecommendList from "./ContentRecommendList";
 import ContentNewList from "./ContentNewList";
+import Loading from "./loading";
 
 const Content = () => {
   const [newItems, setNewItems] = useState([
@@ -50,6 +51,7 @@ const Content = () => {
     <div>
       <ContentNewList newItems={newItems} />
       <ContentRecommendList recommendItems={recommendItems} />
+      <Loading />
     </div>
   );
 };
