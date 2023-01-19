@@ -1,4 +1,4 @@
-import styles from "./ContentRecoItem.module.scss";
+import styles from "./ContentRecommendItem.module.scss";
 
 const ContentRecoItem = ({ item }) => {
   return (
