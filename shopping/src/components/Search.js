@@ -1,6 +1,8 @@
 import styles from "./Search.module.scss";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useState } from "react";
+import SearchList from "./SearchList";
+import virtualData from "./SampleData";
 
 const Search = () => {
   const [value, setValue] = useState("");
@@ -12,6 +14,10 @@ const Search = () => {
     e.preventDefault();
     setValue("");
   };
+
+  const filteredData = virtualData.filter((item) =>
+    item.name.toUpperCase().includes(value.toUpperCase())
+  );
 
   return (
     <div>
@@ -26,6 +32,7 @@ const Search = () => {
           <AiOutlineSearch />
         </button>
       </form>
+      {value && <SearchList data={filteredData} />}
     </div>
   );
 };

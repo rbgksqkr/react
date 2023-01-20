@@ -5,8 +5,8 @@ import "../src/global.css";
 const App = ({ Component, pageProps }) => (
   <>
     <Head>
-      <meta charset="utf-8" />
-      <title>쿠팡!</title>
+      <meta charSet="utf-8" />
+      <title>To you - 당신을 위한</title>
     </Head>
     <Component {...pageProps} />
   </>
