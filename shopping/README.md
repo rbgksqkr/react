@@ -24,5 +24,5 @@
 - 로딩창 구현
 - 무한 스크롤 적용
   - 열을 고정하고 일정하게 추가하기
-  - skeleton ui 적용
+  - skeleton ui 적용해보기
 - next.js 적용

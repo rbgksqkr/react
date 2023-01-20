@@ -21,7 +21,7 @@ const Navbar = () => {
       <div onMouseOver={onMouseOver} onMouseOut={onMouseOut}>
         <Category open={modalOpen} />
       </div>
-      <div className={styles.home}>
+      <div className={styles.logo}>
         <img src="images/logo.png" alt="home" />
       </div>
       <Search />
@@ -30,7 +30,7 @@ const Navbar = () => {
         <div className={styles.mypageImage}>
           <MdPersonOutline />
         </div>
-        <span>마이쿠팡</span>
+        <span>마이페이지</span>
       </div>
       <div className={styles.basket}>
         <div className={styles.basketImage}>

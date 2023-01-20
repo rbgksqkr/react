@@ -48,7 +48,7 @@ const Login = () => {
               name="userId"
               value={data.userId}
               placeholder="아이디(이메일)"
-              autocomplete="off"
+              autoComplete="off"
               onChange={onChange}
               required
             ></input>
@@ -76,14 +76,13 @@ const Login = () => {
           <button className={styles.loginBtn} type="submit">
             로그인
           </button>
-          <Link href="/signup" styles={{ textDecoration: "none" }}>
-            <button className={styles.signupBtn} type="button">
-              회원가입
-            </button>
+          <hr />
+          <Link href="/signup" className={styles.signupBtn}>
+            회원가입
           </Link>
         </div>
       </form>
-      <div className={styles.footer}>©Coupang Corp. All rights reserved.</div>
+      <div className={styles.footer}>©ToYou Corp. All rights reserved.</div>
     </div>
   );
 };
