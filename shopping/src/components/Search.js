@@ -6,6 +6,7 @@ import virtualData from "./SampleData";
 
 const Search = () => {
   const [value, setValue] = useState("");
+
   const onChange = (e) => {
     setValue(e.target.value);
   };
@@ -20,20 +21,22 @@ const Search = () => {
   );
 
   return (
-    <div>
-      <form className={styles.searchForm} onSubmit={onSubmit}>
-        <input
-          className={styles.searchInput}
-          placeholder="찾고 싶은 상품을 검색해보세요!"
-          onChange={onChange}
-          value={value}
-        />
-        <button>
-          <AiOutlineSearch />
-        </button>
-      </form>
-      {value && <SearchList data={filteredData} />}
-    </div>
+    <>
+      <div>
+        <form className={styles.searchForm} onSubmit={onSubmit}>
+          <input
+            className={styles.searchInput}
+            placeholder="찾고 싶은 상품을 검색해보세요!"
+            onChange={onChange}
+            value={value}
+          />
+          <button>
+            <AiOutlineSearch />
+          </button>
+        </form>
+        {value && <SearchList data={filteredData} />}
+      </div>
+    </>
   );
 };
 
