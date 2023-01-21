@@ -15,53 +15,60 @@
 
     .emailDiv {
         display: flex;
-    }
-    .emailIcon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50px;
-        height: 50px;
-        background-color: #c3b9d6;
-        border-top: solid 1px black;
-        border-left: solid 1px black;
-        border-bottom: solid 1px black;
-        box-sizing: border-box;
-        font-size: 20px;
+        .emailIcon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            background-color: #c3b9d6;
+            border-top: solid 1px black;
+            border-left: solid 1px black;
+            border-bottom: solid 1px black;
+            box-sizing: border-box;
+            font-size: 20px;
+        }
+
+        .email {
+            width: 450px;
+            height: 50px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
     }
 
-    .email {
-        width: 450px;
-        height: 50px;
-        margin-bottom: 10px;
-        box-sizing: border-box;
-    }
+
+
 
 
     .passwordDiv {
         display: flex;
+
+        .passwordIcon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            background-color: #c3b9d6;
+            border-top: solid 1px black;
+            border-left: solid 1px black;
+            border-bottom: solid 1px black;
+            box-sizing: border-box;
+            font-size: 20px;
+        }
+
+        .password {
+            width: 450px;
+            height: 50px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
     }
 
-    .passwordIcon {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 50px;
-        height: 50px;
-        background-color: #c3b9d6;
-        border-top: solid 1px black;
-        border-left: solid 1px black;
-        border-bottom: solid 1px black;
-        box-sizing: border-box;
-        font-size: 20px;
-    }
 
-    .password {
-        width: 450px;
-        height: 50px;
-        margin-bottom: 10px;
-        box-sizing: border-box;
-    }
+
+
 
     .checkPassword {
         width: 450px;
@@ -86,4 +93,10 @@
         cursor: pointer;
     }
 
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    font-size: 10px;
 }

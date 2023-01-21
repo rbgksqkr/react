@@ -1,6 +1,8 @@
 import styles from "./Signup.module.scss";
 import { useState } from "react";
 import { AiOutlineMail, AiFillLock } from "react-icons/ai";
+import Link from "next/link";
+import { useRouter } from "next/dist/client/router";
 
 const Signup = () => {
   const [value, setValue] = useState({
@@ -8,6 +10,8 @@ const Signup = () => {
     password: "",
     checkPassword: "",
   });
+
+  const router = useRouter();
 
   const onChange = (e) => {
     setValue({ ...value, [e.target.name]: e.target.value });
@@ -18,13 +22,24 @@ const Signup = () => {
       alert("비밀번호가 일치하지 않습니다.");
     e.preventDefault();
     setValue({ ...value, password: "", checkPassword: "" });
+    router.push("./");
   };
 
   return (
     <>
-      <div className={styles.logo}>
+      <Link href="/" className={styles.logo}>
         <img src="images/logo.png" alt="logo" />
-      </div>
+      </Link>
+      <span
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginBottom: "20px",
+          fontWeight: "bolder",
+        }}
+      >
+        회원 정보를 입력해주세요.
+      </span>
       <form className={styles.signupForm} onSubmit={onSubmit}>
         <div>
           <div className={styles.emailDiv}>
@@ -74,6 +89,7 @@ const Signup = () => {
           <button className={styles.signupBtn}>가입하기</button>
         </div>
       </form>
+      <div className={styles.footer}>©ToYou Corp. All rights reserved.</div>
     </>
   );
 };
