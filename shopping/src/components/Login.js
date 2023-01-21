@@ -5,7 +5,7 @@ import { AiOutlineMail, AiFillLock } from "react-icons/ai";
 
 const Login = () => {
   const [data, setData] = useState({
-    userId: "",
+    email: "",
     password: "",
   });
 
@@ -19,7 +19,7 @@ const Login = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     setData({
-      userId: "",
+      email: "",
       password: "",
     });
   };
@@ -39,14 +39,14 @@ const Login = () => {
               marginBottom: "15px",
             }}
           >
-            <div className={styles.userIdIcon}>
+            <div className={styles.emailIcon}>
               <AiOutlineMail />
             </div>
             <input
-              className={styles.userId}
+              className={styles.email}
               type="email"
-              name="userId"
-              value={data.userId}
+              name="email"
+              value={data.email}
               placeholder="아이디(이메일)"
               autoComplete="off"
               onChange={onChange}

@@ -9,10 +9,13 @@
     }
 }
 
-.loginForm {
+.signupForm {
     display: flex;
     justify-content: center;
 
+    .emailDiv {
+        display: flex;
+    }
     .emailIcon {
         display: flex;
         justify-content: center;
@@ -30,11 +33,13 @@
     .email {
         width: 450px;
         height: 50px;
-        font-size: 15px;
-        padding-left: 10px;
+        margin-bottom: 10px;
         box-sizing: border-box;
-        border: solid 1px black;
+    }
 
+
+    .passwordDiv {
+        display: flex;
     }
 
     .passwordIcon {
@@ -54,13 +59,18 @@
     .password {
         width: 450px;
         height: 50px;
-        font-size: 15px;
-        padding-left: 10px;
+        margin-bottom: 10px;
         box-sizing: border-box;
-        border: solid 1px black;
     }
 
-    .loginBtn {
+    .checkPassword {
+        width: 450px;
+        height: 50px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    .signupBtn {
         width: 500px;
         height: 50px;
 
@@ -74,35 +84,6 @@
         border: 0;
         box-shadow: 1px 1px 5px gray;
         cursor: pointer;
-
     }
 
-    .signupBtn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 500px;
-        height: 50px;
-
-        font-size: 20px;
-        font-weight: bolder; 
-
-        margin-bottom: 15px;
-        margin-top: 15px;
-
-        background-color: white;
-        color:#c3b9d6;
-
-        border: 0;
-        box-shadow: 1px 1px 5px gray;
-        text-decoration: none;
-        cursor: pointer;
-
-    }
-}
-
-.footer {
-    display: flex;
-    justify-content: center;
-    font-size: 10px;
 }
