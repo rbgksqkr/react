@@ -18,11 +18,13 @@ const Signup = () => {
   };
 
   const onSubmit = (e) => {
-    if (value.password !== value.checkPassword)
+    if (value.password !== value.checkPassword) {
       alert("비밀번호가 일치하지 않습니다.");
+    }
+
     e.preventDefault();
     setValue({ ...value, password: "", checkPassword: "" });
-    router.push("./");
+    router.push("/"); // DB 구축 시 이메일이 존재하면 예외처리
   };
 
   return (

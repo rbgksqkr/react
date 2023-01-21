@@ -2,12 +2,15 @@ import { useState } from "react";
 import styles from "./Login.module.scss";
 import Link from "next/link";
 import { AiOutlineMail, AiFillLock } from "react-icons/ai";
+import { useRouter } from "next/dist/client/router";
 
 const Login = () => {
   const [data, setData] = useState({
     email: "",
     password: "",
   });
+
+  const router = useRouter();
 
   const onChange = (e) => {
     setData({
@@ -22,6 +25,8 @@ const Login = () => {
       email: "",
       password: "",
     });
+
+    router.push("/"); // DB 구축 시 회원정보가 있으면 리다이렉트
   };
   return (
     <div className={styles.login}>
