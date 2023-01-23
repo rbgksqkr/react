@@ -14,16 +14,18 @@ const Signup = () => {
   const router = useRouter();
 
   const onChange = (e) => {
-    setValue({ ...value, [e.target.name]: e.target.value });
+    setValue((value) => {
+      return { ...value, [e.target.name]: e.target.value };
+    });
   };
 
   const onSubmit = (e) => {
-    if (value.password !== value.checkPassword) {
-      alert("비밀번호가 일치하지 않습니다.");
-    }
-
     e.preventDefault();
     setValue({ ...value, password: "", checkPassword: "" });
+    if (value.password !== value.checkPassword) {
+      alert("비밀번호가 일치하지 않습니다.");
+      return;
+    }
     router.push("/"); // DB 구축 시 이메일이 존재하면 예외처리
   };
 
