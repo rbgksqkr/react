@@ -3,8 +3,8 @@ import { useState } from "react";
 import {
   AiOutlineMail,
   AiFillLock,
-  AiOutlineCheckSquare,
-  AiFillCheckSquare,
+  AiFillEye,
+  AiFillEyeInvisible,
 } from "react-icons/ai";
 import Link from "next/link";
 import { useRouter } from "next/dist/client/router";
@@ -86,19 +86,11 @@ const Signup = () => {
               value={value.password}
               onChange={onChange}
             ></input>
-          </div>
-          <div className={styles.showPassowrd}>
-            <div>비밀번호 표시</div>
             <div className={styles.showPasswordCheckbox} onClick={onToggle}>
-              {value.showPwd ? (
-                <AiFillCheckSquare style={{ color: "rgb(67, 153, 234)" }} />
-              ) : (
-                <AiOutlineCheckSquare />
-              )}
+              {value.showPwd ? <AiFillEye /> : <AiFillEyeInvisible />}
             </div>
           </div>
-
-          <div className={styles.passwordDiv}>
+          <div className={styles.checkPasswordDiv}>
             <div className={styles.passwordIcon}>
               <AiFillLock />
             </div>
