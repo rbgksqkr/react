@@ -1,9 +1,11 @@
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { AiOutlineShoppingCart, AiFillCaretDown } from "react-icons/ai";
 import { MdPersonOutline } from "react-icons/md";
 import { useState } from "react";
 import styles from "./Navbar.module.scss";
 import Category from "../../category/Category";
 import Search from "./Search/Search";
+import Dropdown from "./Dropdown";
+import DropdownList from "./DropdownList";
 
 const Navbar = () => {
   const [modalOpen, setModalOpen] = useState(false);

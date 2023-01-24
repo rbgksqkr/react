@@ -17,7 +17,6 @@
 
 
     .mypage {
-        font-size: 15px;
         margin-right: 20px;
         cursor: pointer;
         .mypageImage {
@@ -25,16 +24,23 @@
             display: flex;
             justify-content: center;
         }
+        span {
+            font-size: 15px;
+        }
+        
     }
 
     .basket {
-        font-size: 15px;
         cursor: pointer;
 
         .basketImage {
             font-size: 30px;
             display: flex;
             justify-content: center;
+        }
+
+        span {
+            font-size: 15px;
         }
 
     }
