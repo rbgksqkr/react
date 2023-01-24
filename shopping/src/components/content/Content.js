@@ -2,7 +2,7 @@ import styles from "./Content.module.scss";
 import { useState, useRef, useEffect } from "react";
 import ContentRecommendList from "./ContentRecommendList";
 import ContentNewList from "./ContentNewList";
-import Loading from "./loading";
+import Loading from "../common/loader/Loading";
 
 const Content = () => {
   const [newItems, setNewItems] = useState([

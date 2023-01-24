@@ -1,6 +1,6 @@
 import AdvertiseListItem from "./AdvertiseListItem";
 import styles from "./AdvertiseList.module.scss";
-import AdButtonList from "./AdButtonList";
+import AdvertiseButtonList from "../AdvertiseButton/AdvertiseButtonList";
 import { useState, useEffect, useRef } from "react";
 
 function useInterval(callback, delay) {
@@ -69,7 +69,7 @@ const AdvertiseList = () => {
 
   return (
     <div className={styles.adList}>
-      <AdButtonList images={images} onMouseOver={onMouseOver} />
+      <AdvertiseButtonList images={images} onMouseOver={onMouseOver} />
       <div>
         {images.map((image) => (
           <AdvertiseListItem key={image.id} image={image} />
