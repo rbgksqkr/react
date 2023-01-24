@@ -1,0 +1,13 @@
+.dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 120px;
+    height: 45px;
+    border: solid 3px #c3b9d6;
+    border-right: solid 1px #ddd;
+    font-size: 14px;
+    padding: 0 10px 0 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}

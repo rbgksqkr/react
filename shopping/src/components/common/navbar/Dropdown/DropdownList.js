@@ -1,6 +1,15 @@
-const DropdownList = () => {
+import styles from "./DropdownList.module.scss";
+import cn from "classnames";
+import { useState, useEffect } from "react";
+
+const DropdownList = ({ visible }) => {
   return (
-    <div style={{ padding: "10px" }}>
+    <div
+      className={cn(
+        styles.dropdownList,
+        visible ? styles.fadeIn : styles.fadeOut
+      )}
+    >
       <div>전체</div>
       <div>여성패션</div>
       <div>남성패션</div>

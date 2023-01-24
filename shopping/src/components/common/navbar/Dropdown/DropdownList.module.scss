@@ -1,0 +1,48 @@
+.dropdownList {
+    position: absolute;
+    width: 120px;
+    top: 105px;
+    padding: 10px;
+    padding-bottom: 0;
+    z-index: 1;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 5px #ddd;
+    background-color: white;
+    box-sizing: border-box;
+    overflow: hidden;
+    animation: fade-in 0.4s ease-in;
+
+
+    div {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+}
+
+.fadeIn {
+    font-size: 100px;
+    animation: fade-in 0.4s ease-in;
+}
+@keyframes fade-in {
+    0% {
+      transform: translateY(-100%);
+    }
+  
+    100% {
+      transform: translateY(0);
+    }
+}
+
+.fadeOut {
+    animation: fade-out 0.4s ease-in;
+}
+@keyframes fade-out {
+    0% {
+        transform: translateY(0);
+    }
+    
+    100% {
+        transform: translateY(-100%);
+    } 
+}
+

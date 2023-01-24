@@ -3,12 +3,9 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { useState } from "react";
 import SearchList from "./SearchList";
 import virtualData from "./SampleData";
-import Dropdown from "../Dropdown";
-import DropdownList from "../DropdownList";
 
 const Search = () => {
   const [value, setValue] = useState("");
-  const [isDropdown, setIsDropdown] = useState(false);
 
   const onChange = (e) => {
     setValue(e.target.value);
@@ -19,10 +16,6 @@ const Search = () => {
     setValue("");
   };
 
-  const onClick = () => {
-    setIsDropdown(!isDropdown);
-  };
-
   const filteredData = virtualData.filter((item) =>
     item.name.toUpperCase().includes(value.toUpperCase())
   );
@@ -30,11 +23,6 @@ const Search = () => {
   return (
     <>
       <div style={{ display: "flex", alignItems: "center" }}>
-        <button onClick={onClick}>전체</button>
-        <Dropdown visible={isDropdown}>
-          <DropdownList />
-        </Dropdown>
-
         <form className={styles.searchForm} onSubmit={onSubmit}>
           <input
             className={styles.searchInput}

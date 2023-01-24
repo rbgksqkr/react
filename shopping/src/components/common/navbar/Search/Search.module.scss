@@ -1,9 +1,12 @@
 .searchForm {
     display: flex;
     align-items: center;
-    height: 35px;
+    width: 400px;
+    height: 45px;
     border: solid 3px #c3b9d6;
+    border-left: 0;
     margin-right: 10px;
+    box-sizing: border-box;
     .searchInput{
         width: 500px;
         height: 30px;
@@ -11,7 +14,6 @@
         border: none;
         display: flex;
         padding-left: 10px;
-        box-sizing: border-box;
     }
 
     button {

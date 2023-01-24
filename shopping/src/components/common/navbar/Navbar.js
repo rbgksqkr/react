@@ -4,8 +4,7 @@ import { useState } from "react";
 import styles from "./Navbar.module.scss";
 import Category from "../../category/Category";
 import Search from "./Search/Search";
-import Dropdown from "./Dropdown";
-import DropdownList from "./DropdownList";
+import Dropdown from "./Dropdown/Dropdown";
 
 const Navbar = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -26,6 +25,7 @@ const Navbar = () => {
       <div className={styles.logo}>
         <img src="images/logo.png" alt="home" />
       </div>
+      <Dropdown />
       <Search />
 
       <div className={styles.mypage}>
