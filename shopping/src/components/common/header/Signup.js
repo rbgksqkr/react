@@ -1,6 +1,11 @@
 import styles from "./Signup.module.scss";
 import { useState } from "react";
-import { AiOutlineMail, AiFillLock } from "react-icons/ai";
+import {
+  AiOutlineMail,
+  AiFillLock,
+  AiOutlineCheckSquare,
+  AiFillCheckSquare,
+} from "react-icons/ai";
 import Link from "next/link";
 import { useRouter } from "next/dist/client/router";
 
@@ -9,6 +14,7 @@ const Signup = () => {
     email: "",
     password: "",
     checkPassword: "",
+    showPwd: false,
   });
 
   const router = useRouter();
@@ -27,6 +33,10 @@ const Signup = () => {
       return;
     }
     router.push("/"); // DB 구축 시 이메일이 존재하면 예외처리
+  };
+
+  const onToggle = (e) => {
+    setValue({ ...value, showPwd: !value.showPwd });
   };
 
   return (
@@ -67,15 +77,27 @@ const Signup = () => {
               <AiFillLock />
             </div>
             <input
-              type="password"
+              type={value.showPwd ? "text" : "password"}
               placeholder="비밀번호"
               name="password"
+              autoComplete="off"
               required
               className={styles.password}
               value={value.password}
               onChange={onChange}
             ></input>
           </div>
+          <div className={styles.showPassowrd}>
+            <div>비밀번호 표시</div>
+            <div className={styles.showPasswordCheckbox} onClick={onToggle}>
+              {value.showPwd ? (
+                <AiFillCheckSquare style={{ color: "rgb(67, 153, 234)" }} />
+              ) : (
+                <AiOutlineCheckSquare />
+              )}
+            </div>
+          </div>
+
           <div className={styles.passwordDiv}>
             <div className={styles.passwordIcon}>
               <AiFillLock />
