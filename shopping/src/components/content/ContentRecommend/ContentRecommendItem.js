@@ -1,6 +1,6 @@
 import styles from "./ContentRecommendItem.module.scss";
 
-const ContentRecoItem = ({ item }) => {
+const ContentRecommendItem = ({ item }) => {
   return (
     <div>
       <div className={styles.content}>
@@ -14,4 +14,4 @@ const ContentRecoItem = ({ item }) => {
   );
 };
 
-export default ContentRecoItem;
+export default ContentRecommendItem;

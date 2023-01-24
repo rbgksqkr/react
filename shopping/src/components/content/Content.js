@@ -1,7 +1,7 @@
 import styles from "./Content.module.scss";
 import { useState, useRef, useEffect } from "react";
-import ContentRecommendList from "./ContentRecommendList";
-import ContentNewList from "./ContentNewList";
+import ContentRecommendList from "./ContentRecommend/ContentRecommendList";
+import ContentNewList from "./ContentNew/ContentNewList";
 import Loading from "../common/loader/Loading";
 
 const Content = () => {
@@ -45,15 +45,34 @@ const Content = () => {
       price: "11,340원",
       src: "images/1.jpg",
     },
+    {
+      id: 4,
+      name: "두피케어 샴푸",
+      price: "11,340원",
+      src: "images/1.jpg",
+    },
+    {
+      id: 5,
+      name: "두피케어 샴푸",
+      price: "11,340원",
+      src: "images/1.jpg",
+    },
+    {
+      id: 6,
+      name: "두피케어 샴푸",
+      price: "11,340원",
+      src: "images/1.jpg",
+    },
   ]);
 
   const [target, setTarget] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const nextId = useRef(4);
+  const nextId = useRef(recommendItems.length + 1);
 
   // 로딩on -> 1.5초 대기(유사 비동기 처리) -> item key 처리 -> state 추가 -> 로딩off
   const getMoreItem = async () => {
     setIsLoaded(true);
+    // DB 구축 시 api 호출
     await new Promise((resolve) => setTimeout(resolve, 1500));
     const items = recommendItems.map((item) => {
       return { ...item, id: nextId.current++ };

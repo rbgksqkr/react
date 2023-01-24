@@ -14,7 +14,7 @@ const ContentRecommendList = ({ recommendItems }) => {
           HOT! TREND! 카테고리별 추천상품
         </span>
         <br />
-        <div className={styles.recoItemList}>
+        <div className={styles.recommendList}>
           {recommendItems.map((recoItem) => (
             <ContentRecommendItem
               key={recoItem.id}
