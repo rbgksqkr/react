@@ -30,7 +30,6 @@ const initialState = {
 function todo(state = initialState, action) {
   switch (action.type) {
     case INSERT:
-      console.log(state, action);
       return {
         ...state,
         todos: state.todos.concat(action.todo),
