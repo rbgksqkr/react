@@ -5,7 +5,7 @@ import {
   INCREASE,
   DECREASE,
   FINISHED,
-} from "../actions/todo";
+} from "../constants/ActionTypes";
 
 const initialState = {
   todos: [

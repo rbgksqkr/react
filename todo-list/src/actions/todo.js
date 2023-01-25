@@ -1,11 +1,11 @@
-const INSERT = "INSERT";
-const TOGGLE = "TOGGLE";
-const REMOVE = "REMOVE";
-const INCREASE = "INCREASE";
-const DECREASE = "DECREASE";
-const FINISHED = "FINISHED";
-
-export { INSERT, TOGGLE, REMOVE, INCREASE, DECREASE, FINISHED };
+import {
+  INSERT,
+  TOGGLE,
+  REMOVE,
+  INCREASE,
+  DECREASE,
+  FINISHED,
+} from "../constants/ActionTypes";
 
 let id = 4;
 export const insert = (text) => ({
