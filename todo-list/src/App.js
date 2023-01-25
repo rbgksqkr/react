@@ -1,85 +1,11 @@
 import "./App.css";
-import TodoList from "./components/TodoList";
-import { useState, useRef } from "react";
+// import TodoList from "./components/TodoList";
+import Todo from "./components/todolist/Todo";
 
 function App() {
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      text: "react hooks",
-      checked: true,
-    },
-    {
-      id: 2,
-      text: "next.js",
-      checked: false,
-    },
-    {
-      id: 3,
-      text: "브라우저 렌더링 과정 이해하기",
-      checked: false,
-    },
-  ]);
-
-  const nextId = useRef(4);
-  const onInsert = (text) => {
-    const todo = {
-      id: nextId.current,
-      text,
-      checked: false,
-    };
-    setTodos(todos.concat(todo));
-    nextId.current += 1;
-  };
-
-  const onToggle = (id) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === id ? { ...todo, checked: !todo.checked } : todo
-      )
-    );
-  };
-
-  const onRemove = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
-  };
-
-  const onIncrease = () => {
-    const newArray = todos.slice().sort(function (a, b) {
-      if (a.text > b.text) return 1;
-      if (a.text < b.text) return -1;
-      return 0;
-    });
-    setTodos(newArray);
-  };
-
-  const onDecrease = () => {
-    const newArray = todos.slice().sort(function (a, b) {
-      if (a.text < b.text) return 1;
-      if (a.text > b.text) return -1;
-      return 0;
-    });
-    setTodos(newArray);
-  };
-
-  const onFinished = () => {
-    const newArray = todos.slice().sort(function (a, b) {
-      return b.checked - a.checked;
-    });
-    setTodos(newArray);
-  };
-
   return (
     <div>
-      <TodoList
-        todos={todos}
-        onInsert={onInsert}
-        onToggle={onToggle}
-        onRemove={onRemove}
-        onIncrease={onIncrease}
-        onDecrease={onDecrease}
-        onFinished={onFinished}
-      />
+      <Todo />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import TodoInsert from "./TodoInsert";
-import "./TodoList.scss";
 import TodoListItem from "./TodoListItem";
+import "./TodoList.scss";
 
 const TodoList = ({
   todos,
@@ -16,6 +16,7 @@ const TodoList = ({
     if (e.target.value === "decrease") onDecrease();
     if (e.target.value === "finished") onFinished();
   };
+
   return (
     <div className="todo-list">
       <h1>Todo-List</h1>
@@ -31,7 +32,6 @@ const TodoList = ({
           완료
         </button>
       </div>
-
       {todos.map((todo) => (
         <TodoListItem
           key={todo.id}

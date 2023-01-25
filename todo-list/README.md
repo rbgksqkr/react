@@ -2,12 +2,13 @@
 
 `npm init react-app todo-list`
 
-`npm install sass react-icons classnames`
+`npm install sass react-icons classnames redux react-redux`
 
 `npm start`
 
 # 기능목록
 
+- redux 적용
 - todo-list 목록 보기
 
   - todo-list state로 관리하기
