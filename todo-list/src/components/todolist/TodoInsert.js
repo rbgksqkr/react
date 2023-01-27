@@ -11,7 +11,6 @@ const TodoInsert = ({ onInsert }) => {
 
   const onSubmit = (e) => {
     if (value.length !== 0) {
-      console.log(value);
       onInsert(value);
     }
     setValue("");
@@ -21,6 +20,7 @@ const TodoInsert = ({ onInsert }) => {
 
   const valueRef = useRef();
   useEffect(() => valueRef.current.focus(), []);
+
   return (
     <form className="todo-insert" onSubmit={onSubmit}>
       <input

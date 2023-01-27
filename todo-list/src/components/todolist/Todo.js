@@ -12,15 +12,19 @@ import {
 const Todo = () => {
   const todos = useSelector((state) => state.reducer.todos);
   const dispatch = useDispatch();
+
   const onInsert = (todo) => {
     dispatch(insert(todo));
   };
+
   const onToggle = (id) => {
     dispatch(toggle(id));
   };
+
   const onRemove = (id) => {
     dispatch(remove(id));
   };
+
   return (
     <TodoList
       todos={todos}
@@ -35,30 +39,3 @@ const Todo = () => {
 };
 
 export default Todo;
-
-// const mapStateToProps = (state) => ({
-//   todos: state.reducer.todos,
-// });
-
-// const mapDispatchToProps = (dispatch) => ({
-//     insert: (todo) => {
-//       dispatch(insert(todo));
-//     },
-//   toggle: (id) => {
-//     dispatch(toggle(id));
-//   },
-//   remove: (id) => {
-//     dispatch(remove(id));
-//   },
-//     increase: () => {
-//       dispatch(increase());
-//     },
-//     decrease: () => {
-//       dispatch(decrease());
-//     },
-//     finished: () => {
-//       dispatch(finished());
-//     },
-// });
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Todo);

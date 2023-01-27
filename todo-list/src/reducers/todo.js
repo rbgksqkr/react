@@ -1,11 +1,3 @@
-import {
-  INSERT,
-  TOGGLE,
-  REMOVE,
-  INCREASE,
-  DECREASE,
-  FINISHED,
-} from "../constants/ActionTypes";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -27,50 +19,6 @@ const initialState = {
     },
   ],
 };
-
-// function todoReducer(state = initialState, action) {
-//   switch (action.type) {
-//     case INSERT:
-//       return {
-//         ...state,
-//         todos: state.todos.concat(action.todo),
-//       };
-//     case TOGGLE:
-//       return {
-//         ...state,
-//         todos: state.todos.map((todo) =>
-//           todo.id === action.id ? { ...todo, checked: !todo.checked } : todo
-//         ),
-//       };
-//     case REMOVE:
-//       return {
-//         todos: state.todos.filter((todo) => todo.id !== action.id),
-//       };
-//     case INCREASE: {
-// const newTodos = state.todos.slice().sort(function (a, b) {
-//   if (a.text > b.text) return 1;
-//   if (a.text < b.text) return -1;
-//   return 0;
-// });
-// return { todos: newTodos };
-//     }
-//     case DECREASE:
-// const newTodos = state.todos.slice().sort(function (a, b) {
-//   if (a.text < b.text) return 1;
-//   if (a.text > b.text) return -1;
-//   return 0;
-// });
-// return { todos: newTodos };
-//     case FINISHED: {
-// const newTodos = state.todos.slice().sort(function (a, b) {
-//   return b.checked - a.checked;
-// });
-// return { todos: newTodos };
-//     }
-//     default:
-//       return state;
-//   }
-// }
 
 let id = 4;
 const todoSlice = createSlice({
