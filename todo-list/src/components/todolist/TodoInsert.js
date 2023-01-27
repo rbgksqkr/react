@@ -30,7 +30,7 @@ const TodoInsert = ({ onInsert }) => {
         ref={valueRef}
       />
       <button>
-        <IoMdAddCircleOutline />
+        <IoMdAddCircleOutline data-testid="buttonImage" />
       </button>
     </form>
   );

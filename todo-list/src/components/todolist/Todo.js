@@ -10,7 +10,7 @@ import {
 } from "../../reducers/todo";
 
 const Todo = () => {
-  const todos = useSelector((state) => state.reducer.todos);
+  const todos = useSelector((state) => state.todo.todos);
   const dispatch = useDispatch();
 
   const onInsert = (todo) => {
