@@ -1,5 +1,5 @@
-import { connect } from "react-redux";
 import TodoList from "./TodoList";
+import { useSelector, useDispatch } from "react-redux";
 import {
   insert,
   toggle,
@@ -7,53 +7,58 @@ import {
   increase,
   decrease,
   finished,
-} from "../../actions/todo";
+} from "../../reducers/todo";
 
-const Todo = ({
-  todos,
-  insert,
-  toggle,
-  remove,
-  increase,
-  decrease,
-  finished,
-}) => {
+const Todo = () => {
+  const todos = useSelector((state) => state.reducer.todos);
+  const dispatch = useDispatch();
+  const onInsert = (todo) => {
+    dispatch(insert(todo));
+  };
+  const onToggle = (id) => {
+    dispatch(toggle(id));
+  };
+  const onRemove = (id) => {
+    dispatch(remove(id));
+  };
   return (
     <TodoList
       todos={todos}
-      onInsert={insert}
-      onToggle={toggle}
-      onRemove={remove}
-      onIncrease={increase}
-      onDecrease={decrease}
-      onFinished={finished}
+      onInsert={onInsert}
+      onToggle={onToggle}
+      onRemove={onRemove}
+      onIncrease={() => dispatch(increase())}
+      onDecrease={() => dispatch(decrease())}
+      onFinished={() => dispatch(finished())}
     />
   );
 };
 
-const mapStateToProps = (state) => ({
-  todos: state.todo.todos,
-});
+export default Todo;
 
-const mapDispatchToProps = (dispatch) => ({
-  insert: (todo) => {
-    dispatch(insert(todo));
-  },
-  toggle: (id) => {
-    dispatch(toggle(id));
-  },
-  remove: (id) => {
-    dispatch(remove(id));
-  },
-  increase: () => {
-    dispatch(increase());
-  },
-  decrease: () => {
-    dispatch(decrease());
-  },
-  finished: () => {
-    dispatch(finished());
-  },
-});
+// const mapStateToProps = (state) => ({
+//   todos: state.reducer.todos,
+// });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Todo);
+// const mapDispatchToProps = (dispatch) => ({
+//     insert: (todo) => {
+//       dispatch(insert(todo));
+//     },
+//   toggle: (id) => {
+//     dispatch(toggle(id));
+//   },
+//   remove: (id) => {
+//     dispatch(remove(id));
+//   },
+//     increase: () => {
+//       dispatch(increase());
+//     },
+//     decrease: () => {
+//       dispatch(decrease());
+//     },
+//     finished: () => {
+//       dispatch(finished());
+//     },
+// });
+
+// export default connect(mapStateToProps, mapDispatchToProps)(Todo);

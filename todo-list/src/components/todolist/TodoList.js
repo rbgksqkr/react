@@ -32,14 +32,15 @@ const TodoList = ({
           완료
         </button>
       </div>
-      {todos.map((todo) => (
-        <TodoListItem
-          key={todo.id}
-          todo={todo}
-          onToggle={onToggle}
-          onRemove={onRemove}
-        />
-      ))}
+      {todos &&
+        todos.map((todo) => (
+          <TodoListItem
+            key={todo.id}
+            todo={todo}
+            onToggle={onToggle}
+            onRemove={onRemove}
+          />
+        ))}
     </div>
   );
 };
