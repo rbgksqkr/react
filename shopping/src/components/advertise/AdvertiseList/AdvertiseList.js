@@ -2,6 +2,11 @@ import AdvertiseListItem from "./AdvertiseListItem";
 import styles from "./AdvertiseList.module.scss";
 import AdvertiseButtonList from "../AdvertiseButton/AdvertiseButtonList";
 import { useState, useEffect, useRef } from "react";
+import { useRecoilState } from "recoil";
+import {
+  advertiseImage,
+  advertiseId,
+} from "../../../recoil/advertise/recoilAdvertiseState";
 
 function useInterval(callback, delay) {
   const savedCallback = useRef(); // 최근에 들어온 callback을 저장할 ref를 하나 만든다.
@@ -23,25 +28,8 @@ function useInterval(callback, delay) {
 }
 
 const AdvertiseList = () => {
-  const [images, setImages] = useState([
-    {
-      id: 1,
-      src: "images/1.jpg",
-      active: true,
-    },
-    {
-      id: 2,
-      src: "images/2.jpg",
-      active: false,
-    },
-    {
-      id: 3,
-      src: "images/3.jpg",
-      active: false,
-    },
-  ]);
-
-  const [currentId, setCurrentId] = useState(1);
+  const [images, setImages] = useRecoilState(advertiseImage);
+  const [currentId, setCurrentId] = useRecoilState(advertiseId);
   // 타깃은 active: true, 나머진 false
   const onMouseOver = (id) => {
     setImages(

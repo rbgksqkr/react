@@ -2,9 +2,9 @@
 
 `npm init react-app todo-list`
 
-`npm install sass react-icons react-router-dom classnames next@latest react-loading`
+`npm install sass react-icons react-router-dom classnames next@latest react-loading recoil`
 
-`npm start`
+`npm run dev`
 
 # 기능 목록
 
@@ -35,3 +35,4 @@
   - 열을 고정하고 일정하게 추가하기
   - \*skeleton ui 적용해보기
 - next.js 적용
+- recoil 적용
