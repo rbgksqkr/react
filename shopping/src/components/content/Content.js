@@ -83,31 +83,32 @@ const Content = () => {
   };
 
   //
-  const onIntersect = async ([entry], observer) => {
-    if (entry.isIntersecting && !isLoaded) {
-      observer.unobserve(entry.target);
+  const onIntersect = async (entries, observer) => {
+    const target = entries[0];
+    if (target.isIntersecting && !isLoaded) {
       await getMoreItem();
-      observer.observe(entry.target);
     }
+  };
+
+  const intersectRef = useRef(null);
+
+  const options = {
+    root: null, //기본 null, 관찰대상의 부모요소를 지정
+    threshold: 0.7, // 관찰요소와 얼만큼 겹쳤을 때 콜백을 수행하도록 지정하는 요소
   };
 
   // intersectionOberserver 객체 생성 -> target element 화면에 70% 보이면 onIntersect 콜백함수 호출 -> cleanner
   useEffect(() => {
-    let observer;
-    if (target) {
-      observer = new IntersectionObserver(onIntersect, {
-        threshold: 0.7,
-      });
-      observer.observe(target);
-    }
+    const observer = new IntersectionObserver(onIntersect, options);
+    if (intersectRef.current) observer.observe(intersectRef.current);
     return () => observer && observer.disconnect();
-  }, [target]);
+  }, [onIntersect]);
 
   return (
     <div>
       <ContentNewList newItems={newItems} />
       <ContentRecommendList recommendItems={recommendItems} />
-      <div ref={setTarget}>{isLoaded && <Loading />}</div>
+      <div ref={intersectRef}>{isLoaded && <Loading />}</div>
     </div>
   );
 };
