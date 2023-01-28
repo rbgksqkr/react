@@ -10,8 +10,6 @@
     background-color: white;
     box-sizing: border-box;
     overflow: hidden;
-    animation: fade-in 0.4s ease-in;
-
 
     div {
         margin-bottom: 10px;
@@ -20,7 +18,6 @@
 }
 
 .fadeIn {
-    font-size: 100px;
     animation: fade-in 0.4s ease-in;
 }
 @keyframes fade-in {
