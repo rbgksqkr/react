@@ -9,6 +9,7 @@
 # 기능목록
 
 - redux 적용 -> redux-toolkit 적용
+- RTL(React Testing Library) 로 테스트 코드 작성
 - todo-list 목록 보기
 
   - todo-list state로 관리하기
