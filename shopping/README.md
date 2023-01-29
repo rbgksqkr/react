@@ -36,3 +36,4 @@
   - \*skeleton ui 적용해보기
 - next.js 적용
 - recoil 적용
+- DockerFile 작성 -> 로컬에 배포
