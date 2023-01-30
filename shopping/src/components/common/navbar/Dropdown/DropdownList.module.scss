@@ -11,10 +11,17 @@
     box-sizing: border-box;
     overflow: hidden;
 
-    div {
+    .dropdownItem div {
         margin-bottom: 10px;
         font-size: 14px;
+        cursor: pointer;
+        &:hover {
+            cursor: pointer;
+            color: rgb(43, 93, 201);
+            text-decoration: underline;
+        }
     }
+    
 }
 
 .fadeIn {
