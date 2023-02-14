@@ -31,6 +31,6 @@ const initialState = [
 const randomId = Math.random();
 
 export const recoilCategoryList = atom({
-  key: `recoilCategoryList${randomId}`,
+  key: `recoilCategoryList/${randomId}`,
   default: initialState,
 });

@@ -3,82 +3,33 @@ import { useState, useRef, useEffect } from "react";
 import ContentRecommendList from "./ContentRecommend/ContentRecommendList";
 import ContentNewList from "./ContentNew/ContentNewList";
 import Loading from "../common/loader/Loading";
+import { useRecoilState } from "recoil";
+import {
+  recoilNewContentList,
+  recoilRecommendContentList,
+} from "../../recoil/content/recoilContentState";
 
 const Content = () => {
-  const [newItems, setNewItems] = useState([
-    {
-      id: 1,
-      name: "청소기",
-      price: "491,470원",
-      src: "images/4.jpg",
-    },
-    {
-      id: 2,
-      name: "청소기",
-      price: "491,470원",
-      src: "images/4.jpg",
-    },
-    {
-      id: 3,
-      name: "청소기",
-      price: "491,470원",
-      src: "images/4.jpg",
-    },
-  ]);
+  const [newContents, setnewContents] = useRecoilState(recoilNewContentList);
+  const [recommendContents, setRecommendContents] = useRecoilState(
+    recoilRecommendContentList
+  );
 
-  const [recommendItems, setRecommendItems] = useState([
-    {
-      id: 1,
-      name: "두피케어 샴푸",
-      price: "11,340원",
-      src: "images/1.jpg",
-    },
-    {
-      id: 2,
-      name: "두피케어 샴푸",
-      price: "11,340원",
-      src: "images/1.jpg",
-    },
-    {
-      id: 3,
-      name: "두피케어 샴푸",
-      price: "11,340원",
-      src: "images/1.jpg",
-    },
-    {
-      id: 4,
-      name: "두피케어 샴푸",
-      price: "11,340원",
-      src: "images/1.jpg",
-    },
-    {
-      id: 5,
-      name: "두피케어 샴푸",
-      price: "11,340원",
-      src: "images/1.jpg",
-    },
-    {
-      id: 6,
-      name: "두피케어 샴푸",
-      price: "11,340원",
-      src: "images/1.jpg",
-    },
-  ]);
-
-  const [target, setTarget] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const nextId = useRef(recommendItems.length + 1);
+  const nextId = useRef(recommendContents.length + 1);
 
   // 로딩on -> 1.5초 대기(유사 비동기 처리) -> item key 처리 -> state 추가 -> 로딩off
   const getMoreItem = async () => {
     setIsLoaded(true);
     // DB 구축 시 api 호출
     await new Promise((resolve) => setTimeout(resolve, 1500));
-    const items = recommendItems.map((item) => {
+    const items = recommendContents.map((item) => {
       return { ...item, id: nextId.current++ };
     });
 
-    setRecommendItems((recommendItems) => recommendItems.concat(items));
+    setRecommendContents((recommendContents) =>
+      recommendContents.concat(items)
+    );
     setIsLoaded(false);
   };
 
@@ -106,8 +57,8 @@ const Content = () => {
 
   return (
     <div>
-      <ContentNewList newItems={newItems} />
-      <ContentRecommendList recommendItems={recommendItems} />
+      <ContentNewList newContents={newContents} />
+      <ContentRecommendList recommendContents={recommendContents} />
       <div ref={intersectRef}>{isLoaded && <Loading />}</div>
     </div>
   );

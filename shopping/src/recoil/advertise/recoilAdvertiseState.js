@@ -19,12 +19,12 @@ const initialState = [
 
 // recoil + nextjs reload duplication error
 const randomId = Math.random();
-export const advertiseImage = atom({
+export const recoilAdvertiseImage = atom({
   key: `advertiseImage/${randomId}`,
   default: initialState,
 });
 
-export const advertiseId = atom({
+export const recoilAdvertiseId = atom({
   key: `currentAdvertiseId/${randomId}`,
   default: 1,
 });

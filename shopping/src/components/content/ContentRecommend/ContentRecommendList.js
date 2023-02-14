@@ -1,7 +1,7 @@
 import styles from "./ContentRecommendList.module.scss";
 import ContentRecommendItem from "./ContentRecommendItem";
 
-const ContentRecommendList = ({ recommendItems }) => {
+const ContentRecommendList = ({ recommendContents }) => {
   return (
     <div>
       <div
@@ -15,7 +15,7 @@ const ContentRecommendList = ({ recommendItems }) => {
         </span>
         <br />
         <div className={styles.recommendList}>
-          {recommendItems.map((recoItem) => (
+          {recommendContents.map((recoItem) => (
             <ContentRecommendItem
               key={recoItem.id}
               item={recoItem}
