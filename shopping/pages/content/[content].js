@@ -7,7 +7,6 @@ import ContentDetail from "../../src/components/content/ContentDetail/ContentDet
 const Detail = () => {
   const router = useRouter();
   const contentDetail = router.query;
-  console.log(contentDetail);
   return (
     <>
       <Header />

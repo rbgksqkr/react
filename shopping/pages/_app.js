@@ -1,13 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import "../src/styles/global.css";
-import {
-  RecoilRoot,
-  atom,
-  selector,
-  useRecoilState,
-  useRecoilValue,
-} from "recoil";
+import { RecoilRoot } from "recoil";
 
 const App = ({ Component, pageProps }) => (
   <RecoilRoot>

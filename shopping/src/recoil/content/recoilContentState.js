@@ -3,20 +3,20 @@ import { atom, selector } from "recoil";
 const newContentInitialState = [
   {
     id: 1,
-    name: "청소기",
+    name: "일렉트로룩스 a 유선 청소기",
     price: "491,470원",
     src: `${process.env.PUBLIC_URL}/images/4.jpg`,
   },
   {
     id: 2,
-    name: "청소기",
-    price: "491,470원",
+    name: "일렉트로룩스 b 유선 청소기",
+    price: "494,470원",
     src: `${process.env.PUBLIC_URL}/images/4.jpg`,
   },
   {
     id: 3,
-    name: "청소기",
-    price: "491,470원",
+    name: "일렉트로룩스 c 유선 청소기",
+    price: "497,470원",
     src: `${process.env.PUBLIC_URL}/images/4.jpg`,
   },
 ];
