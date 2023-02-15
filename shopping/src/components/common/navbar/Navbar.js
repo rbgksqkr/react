@@ -23,7 +23,7 @@ const Navbar = () => {
         <Category open={modalOpen} />
       </div>
       <div className={styles.logo}>
-        <img src="images/logo.png" alt="home" />
+        <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt="home" />
       </div>
       <Dropdown />
       <Search />
