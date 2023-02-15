@@ -5,6 +5,7 @@ import styles from "./Navbar.module.scss";
 import Category from "../../category/Category";
 import Search from "./Search/Search";
 import Dropdown from "./Dropdown/Dropdown";
+import Link from "next/link";
 
 const Navbar = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -22,9 +23,11 @@ const Navbar = () => {
       <div onMouseOver={onMouseOver} onMouseOut={onMouseOut}>
         <Category open={modalOpen} />
       </div>
-      <div className={styles.logo}>
-        <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt="home" />
-      </div>
+      <Link href="/">
+        <div className={styles.logo}>
+          <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt="home" />
+        </div>
+      </Link>
       <Dropdown />
       <Search />
 
