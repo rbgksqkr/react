@@ -2,7 +2,7 @@
 
 `npm init react-app todo-list`
 
-`npm install sass react-icons react-router-dom classnames next@latest react-loading recoil`
+`npm install sass react-icons react-router-dom classnames next@latest react-loading recoil react-loading-skeleton`
 
 `npm run dev`
 
@@ -35,7 +35,7 @@
 - 로딩창 구현
 - 무한 스크롤 적용
   - 열을 고정하고 일정하게 추가하기
-  - \*skeleton ui 적용해보기
+  - skeleton ui 적용해보기
 - next.js 적용
 - recoil 적용
 - Docker 적용

@@ -1,12 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import ContentRecommendList from "./ContentRecommend/ContentRecommendList";
 import ContentNewList from "./ContentNew/ContentNewList";
-import Loading from "../common/loader/Loading";
 import { useRecoilState } from "recoil";
 import {
   recoilNewContentList,
   recoilRecommendContentList,
 } from "../../recoil/content/recoilContentState";
+import SkeletonContent from "../common/loader/SkeletonContent";
 
 const Content = () => {
   const [newContents, setnewContents] = useRecoilState(recoilNewContentList);
@@ -55,7 +55,7 @@ const Content = () => {
     <div>
       <ContentNewList newContents={newContents} />
       <ContentRecommendList recommendContents={recommendContents} />
-      <div>{isLoaded && <Loading />}</div>
+      {isLoaded && <SkeletonContent items={recommendContents} />}
       <div style={{ height: "100px" }} ref={intersectRef} />
     </div>
   );
