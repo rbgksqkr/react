@@ -2,7 +2,7 @@ import ReactLoading from "react-loading";
 
 const Loading = () => {
   return (
-    <div style={{ textAlign: "center" }}>
+    <div style={{ textAlign: "center", marginTop: "20px" }}>
       <div style={{ display: "inline-block" }}>
         <ReactLoading
           type="spin"

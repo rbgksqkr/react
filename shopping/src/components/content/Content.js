@@ -55,7 +55,8 @@ const Content = () => {
     <div>
       <ContentNewList newContents={newContents} />
       <ContentRecommendList recommendContents={recommendContents} />
-      <div ref={intersectRef}>{isLoaded && <Loading />}</div>
+      <div>{isLoaded && <Loading />}</div>
+      <div style={{ height: "100px" }} ref={intersectRef} />
     </div>
   );
 };
