@@ -9,9 +9,10 @@ const ContentDetail = ({ contentDetail }) => {
           <img src={src} alt="vaccum" />
         </div>
         <div className={styles.detail}>
-          <div className={styles.name}>{name}</div>
-          <hr />
-          <div className={styles.price}>{price}</div>
+          <div>
+            <h1 className={styles.name}>{name}</h1>
+            <h2 className={styles.price}>{price}</h2>
+          </div>
           <hr />
           <div>
             <span>무료배송</span>
