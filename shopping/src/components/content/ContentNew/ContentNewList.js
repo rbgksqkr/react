@@ -7,7 +7,7 @@ const ContentNewList = ({ newContents }) => {
       <div>
         <div
           style={{
-            width: "360px",
+            width: "380px",
             margin: "auto",
             marginTop: "20px",
             textAlign: "center",
