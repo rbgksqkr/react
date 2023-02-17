@@ -32,18 +32,22 @@ const Navbar = () => {
         <Dropdown />
         <Search />
 
-        <div className={styles.mypage}>
-          <div className={styles.mypageImage}>
-            <MdPersonOutline />
+        <Link href="/mypage">
+          <div className={styles.mypage}>
+            <div className={styles.mypageImage}>
+              <MdPersonOutline />
+            </div>
+            <span>마이페이지</span>
           </div>
-          <span>마이페이지</span>
-        </div>
-        <div className={styles.basket}>
-          <div className={styles.basketImage}>
-            <AiOutlineShoppingCart />
+        </Link>
+        <Link href="/cart">
+          <div className={styles.basket}>
+            <div className={styles.basketImage}>
+              <AiOutlineShoppingCart />
+            </div>
+            <span>장바구니</span>
           </div>
-          <span>장바구니</span>
-        </div>
+        </Link>
       </div>
       <hr style={{ opacity: 0.3, margin: 0 }} />
     </>

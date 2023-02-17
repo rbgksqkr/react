@@ -1,0 +1,24 @@
+.cartContent {
+    display: flex;
+    box-shadow: 1px 1px 1px 1px gray;
+    background-color: rgba(229, 220, 220, 0.16);
+    width: 600px;
+    height: 80px;
+    padding: 10px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .info {
+        padding: 10px;
+        font-size: 14px;
+
+        .name {
+            font-weight: bolder;
+            margin-bottom: 10px;
+        }
+    }
+}
