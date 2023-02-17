@@ -11,6 +11,39 @@
     align-items: center;
 
     box-shadow: 2px 2px 2px 2px gray;
+
+    .userId {
+        display: flex;
+        width: 300px;
+    }
+
+    .currentPassword {
+        display: flex;
+        width: 400px;
+
+        input {
+            margin-left: auto;
+            width: 200px;
+            height: 20px;
+            font-size: 15px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    }
+
+    .nextPassword {
+        display: flex;
+        width: 400px;
+        input {
+            margin-left: auto;
+            width: 200px;
+            height: 20px;
+            font-size: 15px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    }
+
     button {
         width: 200px;
         height: 50px;
