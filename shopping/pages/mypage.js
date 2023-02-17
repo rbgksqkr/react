@@ -6,7 +6,7 @@ const mypage = () => {
     <div>
       <Header />
       <Navbar />
-      마이페이지
+      <MyPage />
     </div>
   );
 };
