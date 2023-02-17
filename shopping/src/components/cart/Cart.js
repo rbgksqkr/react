@@ -21,11 +21,15 @@ const Cart = () => {
   return (
     <div>
       <h1>장바구니</h1>
-      <div>
-        {cartContent &&
-          cartContent.map((content) => <CartContent content={content} />)}
+      <div style={{ display: "flex", gap: "300px" }}>
+        <div>
+          {cartContent &&
+            cartContent.map((content) => (
+              <CartContent key={content.id} content={content} />
+            ))}
+        </div>
+        <div>{<CartResult />}</div>
       </div>
-      <div>{<CartResult />}</div>
     </div>
   );
 };
