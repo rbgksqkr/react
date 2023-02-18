@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CartContent from "./CartContent";
 import CartResult from "./CartResult";
 
@@ -7,18 +7,25 @@ const Cart = () => {
     {
       id: 1,
       name: "일렉트로룩스 a 유선 청소기",
-      price: "491,470원",
+      price: 91470,
       src: `${process.env.PUBLIC_URL}/images/4.jpg`,
+      delivery: 2500,
       checked: false,
     },
     {
       id: 2,
       name: "두피케어 샴푸",
-      price: "11,340원",
+      price: 11340,
       src: `${process.env.PUBLIC_URL}/images/1.jpg`,
+      delivery: 0,
       checked: false,
     },
   ]);
+  const [resultData, setResultData] = useState({
+    totalPrice: 0,
+    totalDelivery: 0,
+    totalPayPrice: 0,
+  });
 
   const handleToggle = (id) => {
     setCartContent(
@@ -27,6 +34,27 @@ const Cart = () => {
       )
     );
   };
+
+  const getTotalPayPrice = () => {
+    const checkedCartContent = cartContent.filter(
+      (content) => content.checked === true
+    );
+    let totalPrice = 0;
+    let totalDelivery = 0;
+    checkedCartContent.forEach((content) => {
+      totalPrice += content.price;
+      totalDelivery += content.delivery;
+    });
+    setResultData({
+      totalPrice,
+      totalDelivery,
+      totalPayPrice: totalPrice + totalDelivery,
+    });
+  };
+
+  useEffect(() => {
+    getTotalPayPrice();
+  }, [cartContent]);
 
   return (
     <div>
@@ -42,7 +70,7 @@ const Cart = () => {
               />
             ))}
         </div>
-        <div>{<CartResult />}</div>
+        <div>{<CartResult resultData={resultData} />}</div>
       </div>
     </div>
   );

@@ -14,7 +14,10 @@ const CartContent = ({ content, handleToggle }) => {
       </div>
       <div className={styles.info}>
         <div className={styles.name}>{name}</div>
-        <div className={styles.price}>{price}</div>
+        <div className={styles.price}>
+          {price.toLocaleString("ko-KR")}
+          <span>원</span>
+        </div>
       </div>
     </div>
   );
