@@ -12,10 +12,10 @@ const ContentNewItem = ({ newItem }) => {
               id: newItem.id,
               src: newItem.src,
               name: newItem.name,
-              price: newItem.price,
-              count: newItem.count,
-              delivery: newItem.delivery,
-              checked: newItem.checked,
+              price: Number(newItem.price),
+              // count: newItem.count,
+              // delivery: newItem.delivery,
+              // checked: newItem.checked,
             },
           }}
         >

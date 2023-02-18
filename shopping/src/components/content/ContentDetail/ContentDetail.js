@@ -6,8 +6,9 @@ import styles from "./ContentDetail.module.scss";
 const ContentDetail = ({ contentDetail }) => {
   const { src, name } = contentDetail;
   const price = Number(contentDetail.price);
+
   const [cartContents, setCartContents] = useRecoilState(recoilCartContent);
-  console.log(contentDetail);
+
   const router = useRouter();
 
   const handleClick = () => {
@@ -15,9 +16,9 @@ const ContentDetail = ({ contentDetail }) => {
       id: cartContents.length + 1,
       src: contentDetail.src,
       name: contentDetail.name,
-      price: contentDetail.price,
-      count: contentDetail.count,
-      delivery: contentDetail.delivery,
+      price: Number(contentDetail.price),
+      count: Number(contentDetail.count),
+      delivery: Number(contentDetail.delivery),
     };
     setCartContents(cartContents.concat(newContent));
     router.push("/cart");
