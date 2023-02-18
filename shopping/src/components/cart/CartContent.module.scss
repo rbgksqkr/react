@@ -12,6 +12,17 @@
         height: 80px;
     }
 
+    .checkbox {
+        cursor: pointer;
+        color: blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        font-size: 20px;
+        
+    }
+
     .info {
         padding: 10px;
         font-size: 14px;

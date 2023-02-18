@@ -9,14 +9,24 @@ const Cart = () => {
       name: "일렉트로룩스 a 유선 청소기",
       price: "491,470원",
       src: `${process.env.PUBLIC_URL}/images/4.jpg`,
+      checked: false,
     },
     {
       id: 2,
       name: "두피케어 샴푸",
       price: "11,340원",
       src: `${process.env.PUBLIC_URL}/images/1.jpg`,
+      checked: false,
     },
   ]);
+
+  const handleToggle = (id) => {
+    setCartContent(
+      cartContent.map((content) =>
+        content.id === id ? { ...content, checked: !content.checked } : content
+      )
+    );
+  };
 
   return (
     <div>
@@ -25,7 +35,11 @@ const Cart = () => {
         <div>
           {cartContent &&
             cartContent.map((content) => (
-              <CartContent key={content.id} content={content} />
+              <CartContent
+                key={content.id}
+                content={content}
+                handleToggle={handleToggle}
+              />
             ))}
         </div>
         <div>{<CartResult />}</div>
