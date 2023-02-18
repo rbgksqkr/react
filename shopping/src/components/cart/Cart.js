@@ -35,6 +35,10 @@ const Cart = () => {
     );
   };
 
+  const handleRemove = (id) => {
+    setCartContent(cartContent.filter((content) => content.id !== id));
+  };
+
   const getTotalPayPrice = () => {
     const checkedCartContent = cartContent.filter(
       (content) => content.checked === true
@@ -67,6 +71,7 @@ const Cart = () => {
                 key={content.id}
                 content={content}
                 handleToggle={handleToggle}
+                handleRemove={handleRemove}
               />
             ))}
         </div>
