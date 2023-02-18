@@ -2,7 +2,7 @@ import Cart from "../src/components/cart/Cart";
 import Header from "../src/components/common/header/Header";
 import Navbar from "../src/components/common/navbar/Navbar";
 
-const cart = () => {
+const CartPage = () => {
   return (
     <div>
       <Header />
@@ -12,4 +12,4 @@ const cart = () => {
   );
 };
 
-export default cart;
+export default CartPage;

@@ -7,12 +7,15 @@ const ContentNewItem = ({ newItem }) => {
       <div className={styles.content}>
         <Link
           href={{
-            pathname: "/content/[contentID]",
+            pathname: "/content/[id]",
             query: {
-              contentID: newItem.id,
+              id: newItem.id,
               src: newItem.src,
               name: newItem.name,
               price: newItem.price,
+              count: newItem.count,
+              delivery: newItem.delivery,
+              checked: newItem.checked,
             },
           }}
         >
@@ -21,7 +24,10 @@ const ContentNewItem = ({ newItem }) => {
           </div>
         </Link>
         <div className={styles.name}>{newItem.name}</div>
-        <div className={styles.price}>{newItem.price}</div>
+        <div className={styles.price}>
+          {newItem.price.toLocaleString("ko-KR")}
+          <span>원</span>
+        </div>
       </div>
     </div>
   );

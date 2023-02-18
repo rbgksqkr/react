@@ -1,28 +1,12 @@
 import { useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
+import { recoilCartContent } from "../../recoil/cart/recoilCartState";
 import CartContent from "./CartContent";
 import CartResult from "./CartResult";
 
 const Cart = () => {
-  const [cartContents, setcartContents] = useState([
-    {
-      id: 1,
-      name: "일렉트로룩스 a 유선 청소기",
-      price: 91470,
-      count: 1,
-      src: `${process.env.PUBLIC_URL}/images/4.jpg`,
-      delivery: 2500,
-      checked: false,
-    },
-    {
-      id: 2,
-      name: "두피케어 샴푸",
-      price: 11340,
-      count: 1,
-      src: `${process.env.PUBLIC_URL}/images/1.jpg`,
-      delivery: 0,
-      checked: false,
-    },
-  ]);
+  const [cartContents, setCartContents] = useRecoilState(recoilCartContent);
+
   const [resultData, setResultData] = useState({
     totalPrice: 0,
     totalDelivery: 0,
@@ -30,7 +14,7 @@ const Cart = () => {
   });
 
   const handleToggle = (id) => {
-    setcartContents(
+    setCartContents(
       cartContents.map((content) =>
         content.id === id ? { ...content, checked: !content.checked } : content
       )
@@ -38,11 +22,11 @@ const Cart = () => {
   };
 
   const handleRemove = (id) => {
-    setcartContents(cartContents.filter((content) => content.id !== id));
+    setCartContents(cartContents.filter((content) => content.id !== id));
   };
 
   const handleCountIncrease = (id) => {
-    setcartContents(
+    setCartContents(
       cartContents.map((content) =>
         content.id === id ? { ...content, count: content.count + 1 } : content
       )
@@ -50,7 +34,7 @@ const Cart = () => {
   };
 
   const handleCountDecrease = (id) => {
-    setcartContents(
+    setCartContents(
       cartContents.map((content) =>
         content.id === id
           ? content.count > 1
@@ -68,8 +52,8 @@ const Cart = () => {
     let totalPrice = 0;
     let totalDelivery = 0;
     checkedcartContents.forEach((content) => {
-      totalPrice += content.price * content.count;
-      totalDelivery += content.delivery;
+      totalPrice += Number(content.price) * Number(content.count);
+      totalDelivery += Number(content.delivery);
     });
     setResultData({
       totalPrice,
@@ -80,7 +64,6 @@ const Cart = () => {
 
   useEffect(() => {
     getTotalPayPrice();
-    console.log(cartContents);
   }, [cartContents]);
 
   return (

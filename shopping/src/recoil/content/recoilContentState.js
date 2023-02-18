@@ -4,20 +4,29 @@ const newContentInitialState = [
   {
     id: 1,
     name: "일렉트로룩스 a 유선 청소기",
-    price: "491,470원",
+    price: 91470,
+    count: 1,
     src: `${process.env.PUBLIC_URL}/images/4.jpg`,
+    delivery: 2500,
+    checked: false,
   },
   {
     id: 2,
     name: "일렉트로룩스 b 유선 청소기",
-    price: "494,470원",
+    price: 94470,
+    count: 1,
     src: `${process.env.PUBLIC_URL}/images/4.jpg`,
+    delivery: 2500,
+    checked: false,
   },
   {
     id: 3,
     name: "일렉트로룩스 c 유선 청소기",
-    price: "497,470원",
+    price: 97470,
+    count: 1,
     src: `${process.env.PUBLIC_URL}/images/4.jpg`,
+    delivery: 2500,
+    checked: false,
   },
 ];
 

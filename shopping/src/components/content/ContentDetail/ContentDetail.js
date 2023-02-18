@@ -1,7 +1,27 @@
+import { useRouter } from "next/router";
+import { useRecoilState } from "recoil";
+import { recoilCartContent } from "../../../recoil/cart/recoilCartState";
 import styles from "./ContentDetail.module.scss";
 
 const ContentDetail = ({ contentDetail }) => {
-  const { src, name, price } = contentDetail;
+  const { src, name } = contentDetail;
+  const price = Number(contentDetail.price);
+  const [cartContents, setCartContents] = useRecoilState(recoilCartContent);
+  console.log(contentDetail);
+  const router = useRouter();
+
+  const handleClick = () => {
+    const newContent = {
+      id: cartContents.length + 1,
+      src: contentDetail.src,
+      name: contentDetail.name,
+      price: contentDetail.price,
+      count: contentDetail.count,
+      delivery: contentDetail.delivery,
+    };
+    setCartContents(cartContents.concat(newContent));
+    router.push("/cart");
+  };
   return (
     <div>
       <div className={styles.content}>
@@ -11,7 +31,10 @@ const ContentDetail = ({ contentDetail }) => {
         <div className={styles.detail}>
           <div>
             <h1 className={styles.name}>{name}</h1>
-            <h2 className={styles.price}>{price}</h2>
+            <h2 className={styles.price}>
+              {price.toLocaleString("ko-KR")}
+              <span>원</span>
+            </h2>
           </div>
           <hr />
           <div>
@@ -39,7 +62,9 @@ const ContentDetail = ({ contentDetail }) => {
             </span>
           </div>
           <hr />
-          <button className={styles.basket}>장바구니 담기</button>
+          <button className={styles.basket} onClick={handleClick}>
+            장바구니 담기
+          </button>
           <button className={styles.buy}>바로구매</button>
         </div>
       </div>

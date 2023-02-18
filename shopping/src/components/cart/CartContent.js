@@ -9,7 +9,9 @@ const CartContent = ({
   handleCountIncrease,
   handleCountDecrease,
 }) => {
-  const { id, name, price, count, src, checked } = content;
+  const { id, name, src, checked } = content;
+  const price = Number(content.price);
+  const count = Number(content.count);
 
   return (
     <div className={styles.cartContent}>
