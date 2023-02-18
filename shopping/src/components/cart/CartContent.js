@@ -2,8 +2,14 @@ import styles from "./CartContent.module.scss";
 import { AiOutlineCheckSquare, AiFillCheckSquare } from "react-icons/ai";
 import { MdOutlineCancel } from "react-icons/md";
 
-const CartContent = ({ content, handleToggle, handleRemove }) => {
-  const { id, name, price, src, checked } = content;
+const CartContent = ({
+  content,
+  handleToggle,
+  handleRemove,
+  handleCountIncrease,
+  handleCountDecrease,
+}) => {
+  const { id, name, price, count, src, checked } = content;
 
   return (
     <div className={styles.cartContent}>
@@ -19,6 +25,11 @@ const CartContent = ({ content, handleToggle, handleRemove }) => {
           {price.toLocaleString("ko-KR")}
           <span>원</span>
         </div>
+      </div>
+      <div className={styles.countContent}>
+        <button onClick={() => handleCountDecrease(id)}>-</button>
+        <span>{count}</span>
+        <button onClick={() => handleCountIncrease(id)}>+</button>
       </div>
       <div className={styles.cancelBtn} onClick={() => handleRemove(id)}>
         <MdOutlineCancel />

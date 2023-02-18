@@ -32,6 +32,12 @@
         }
     }
 
+    .countContent {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .cancelBtn {
         display: flex;
         align-items: center;
