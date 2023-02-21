@@ -1,9 +1,9 @@
 import Signup from "../src/components/common/header/Signup";
-const signUp = () => {
+const SignUp = () => {
   return (
     <>
       <Signup />
     </>
   );
 };
-export default signUp;
+export default SignUp;

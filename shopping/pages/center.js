@@ -1,4 +1,4 @@
-const center = () => {
+const Center = () => {
   return <div>고객센터</div>;
 };
-export default center;
+export default Center;
