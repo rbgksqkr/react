@@ -14,13 +14,28 @@ const ContentDetail = ({ contentDetail }) => {
   const handleClick = () => {
     const newContent = {
       id: cartContents.length + 1,
-      src: contentDetail.src,
       name: contentDetail.name,
-      price: Number(contentDetail.price),
+      price,
+      src: contentDetail.src,
       count: Number(contentDetail.count),
       delivery: Number(contentDetail.delivery),
     };
-    setCartContents(cartContents.concat(newContent));
+
+    const checkDuplcation = cartContents.findIndex(
+      (content) => content.name === newContent.name
+    );
+
+    if (checkDuplcation >= 0) {
+      setCartContents(
+        cartContents.map((content) =>
+          content.name === newContent.name
+            ? { ...content, count: content.count + 1 }
+            : content
+        )
+      );
+    } else {
+      setCartContents(cartContents.concat(newContent));
+    }
     router.push("/cart");
   };
   return (

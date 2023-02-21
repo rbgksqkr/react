@@ -6,7 +6,6 @@ import CartResult from "./CartResult";
 
 const Cart = () => {
   const [cartContents, setCartContents] = useRecoilState(recoilCartContent);
-
   const [resultData, setResultData] = useState({
     totalPrice: 0,
     totalDelivery: 0,

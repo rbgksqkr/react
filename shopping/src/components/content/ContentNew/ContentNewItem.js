@@ -10,9 +10,11 @@ const ContentNewItem = ({ newItem }) => {
             pathname: "/content/[cid]",
             query: {
               cid: newItem.id,
-              src: newItem.src,
               name: newItem.name,
-              price: Number(newItem.price),
+              price: newItem.price,
+              src: newItem.src,
+              count: newItem.count,
+              delivery: newItem.delivery,
             },
           }}
           as={`/content/detail`}
