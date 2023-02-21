@@ -2,13 +2,13 @@
 
 `npm init react-app todo-list`
 
-`npm install sass react-icons react-router-dom classnames next@latest react-loading recoil react-loading-skeleton`
+`npm install sass react-icons react-router-dom classnames next@latest react-loading recoil react-loading-skeleton @react-three/fiber`
 
 `npm run dev`
 
 # 기능 목록
 
-- Navbar 만들기
+- Navbar
   - 홈화면
   - 검색
     - 검색 기능 구현
@@ -42,6 +42,9 @@
   - 체크박스 기능
   - 삭제 기능
   - 체크된 상품 수량과 가격에 맞게 최종 결제 금액 확인
+- 고객센터
+  - \*three.js 로 3D 캐릭터 만들어보기
+  - \*Google maps API 사용해서 쇼핑몰 위치 보여주기
 - 로딩창 구현
   - skeleton ui 적용해보기
 - 무한 스크롤 적용
