@@ -7,17 +7,15 @@ const ContentNewItem = ({ newItem }) => {
       <div className={styles.content}>
         <Link
           href={{
-            pathname: "/content/[id]",
+            pathname: "/content/[cid]",
             query: {
-              id: newItem.id,
+              cid: newItem.id,
               src: newItem.src,
               name: newItem.name,
               price: Number(newItem.price),
-              // count: newItem.count,
-              // delivery: newItem.delivery,
-              // checked: newItem.checked,
             },
           }}
+          as={`/content/detail`}
         >
           <div className={styles.image}>
             <img src={newItem.src} alt="vaccum" />
