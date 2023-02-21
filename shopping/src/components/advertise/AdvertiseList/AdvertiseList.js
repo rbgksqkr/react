@@ -29,8 +29,8 @@ function useInterval(callback, delay) {
 
 const AdvertiseList = () => {
   const [images, setImages] = useRecoilState(recoilAdvertiseImage);
-  const [currentId, setCurrentId] = useRecoilState(recoilAdvertiseId);
-  // 타깃은 active: true, 나머진 false
+
+  const intervalRef = useRef(1);
   const onMouseOver = (id) => {
     setImages(
       images.map((image) =>
@@ -39,20 +39,19 @@ const AdvertiseList = () => {
           : { ...image, active: false }
       )
     );
-    setCurrentId(id);
+    intervalRef.current = id;
   };
 
-  // 1.5초마다 다음 광고로 넘어가기
   useInterval(() => {
-    setCurrentId((prevId) => prevId + 1);
-    if (currentId === 3) setCurrentId(1);
+    if (intervalRef.current === 4) intervalRef.current = 1;
     setImages(
       images.map((image) =>
-        image.id === currentId
+        image.id === intervalRef.current
           ? { ...image, active: true }
           : { ...image, active: false }
       )
     );
+    intervalRef.current += 1;
   }, 1500);
 
   return (

@@ -23,8 +23,3 @@ export const recoilAdvertiseImage = atom({
   key: `advertiseImage/${randomId}`,
   default: initialState,
 });
-
-export const recoilAdvertiseId = atom({
-  key: `currentAdvertiseId/${randomId}`,
-  default: 1,
-});
