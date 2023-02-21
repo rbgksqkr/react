@@ -13,6 +13,8 @@ const ContentNewItem = ({ newItem }) => {
               name: newItem.name,
               price: newItem.price,
               src: newItem.src,
+              color: newItem.color,
+              model: newItem.model,
               count: newItem.count,
               delivery: newItem.delivery,
             },

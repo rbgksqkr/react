@@ -11,6 +11,20 @@ const ContentDetail = ({ contentDetail }) => {
 
   const router = useRouter();
 
+  const date = new Date();
+  const day = ["일", "월", "화", "수", "목", "금", "토"];
+
+  const deliveryInfo = {
+    deliveryMonth: date.getMonth() + 1,
+    deliveryDate: date.getDate() + 1,
+    deliveryDay: day[date.getDay() + 1],
+    leftHour: 23 - date.getHours(),
+    leftMinute: 59 - date.getMinutes(),
+  };
+
+  const { deliveryMonth, deliveryDate, deliveryDay, leftHour, leftMinute } =
+    deliveryInfo;
+
   const handleClick = () => {
     const newContent = {
       id: cartContents.length + 1,
@@ -56,14 +70,19 @@ const ContentDetail = ({ contentDetail }) => {
           <div>
             <span>무료배송</span>
             <br />
-            <br /> <span>내일(목) 2/16 도착 보장</span>
-            <span>(6시간 12분 내 주문 시 / 서울⋅경기기준)</span>
+            <br />
+            <span>
+              내일({deliveryDay}) {deliveryMonth}/{deliveryDate} 도착 보장
+            </span>
+            <span>
+              ({leftHour}시간 {leftMinute}분 내 주문 시 / 서울⋅경기기준)
+            </span>
           </div>
           <hr />
           <div>
-            <span>모델명 / 품번 : EFCASD74320</span> <br />
+            <span>모델명 / 품번 : {contentDetail.model}</span> <br />
             <br />
-            <span>색상 : black</span>
+            <span>색상 : {contentDetail.color}</span>
           </div>
           <hr />
           <div className={styles.coupangPay}>
@@ -74,7 +93,8 @@ const ContentDetail = ({ contentDetail }) => {
             <br />
             <br />
             <span>
-              [로켓와우 + 쿠페이 머니] 결제 시 4% 추가적립 2934일 남음
+              [로켓와우 + 쿠페이 머니] 결제 시 4% 추가적립{" "}
+              {3000 - date.getDate()}일 남음
             </span>
           </div>
           <hr />
