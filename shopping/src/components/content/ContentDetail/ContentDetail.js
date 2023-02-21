@@ -21,11 +21,11 @@ const ContentDetail = ({ contentDetail }) => {
       delivery: Number(contentDetail.delivery),
     };
 
-    const checkDuplcation = cartContents.findIndex(
+    const checkDuplication = cartContents.findIndex(
       (content) => content.name === newContent.name
     );
 
-    if (checkDuplcation >= 0) {
+    if (checkDuplication >= 0) {
       setCartContents(
         cartContents.map((content) =>
           content.name === newContent.name
