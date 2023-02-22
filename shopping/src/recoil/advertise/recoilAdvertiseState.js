@@ -1,18 +1,18 @@
-import { atom, selector } from "recoil";
+import { atom } from "recoil";
 const initialState = [
   {
     id: 1,
-    src: "images/1.jpg",
+    src: `/images/1.jpg`,
     active: true,
   },
   {
     id: 2,
-    src: "images/2.jpg",
+    src: `/images/2.jpg`,
     active: false,
   },
   {
     id: 3,
-    src: "images/3.jpg",
+    src: `/images/3.jpg`,
     active: false,
   },
 ];
