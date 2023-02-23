@@ -26,7 +26,7 @@ const Navbar = () => {
         </div>
         <Link href="/">
           <div className={styles.logo}>
-            <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt="home" />
+            <img src={`/images/logo.png`} alt="home" />
           </div>
         </Link>
         <Dropdown />
