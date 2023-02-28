@@ -53,8 +53,8 @@ jobs:
       - name: Docker build & push to docker hub
         run: |
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-          docker build --platform linux/amd64 -t ${{ secrets.DOCKER_USERNAME }}/shopping-image -f .
-          docker push ${{ secrets.DOCKER_USERNAME }}/shoping-image
+          docker build --platform linux/amd64 -t ${{ secrets.DOCKER_USERNAME }}/shopping-image -f ./shopping/DockerFile .
+          docker push ${{ secrets.DOCKER_USERNAME }}/shopping-image
 
       # Docker run
       - name: EC2 Docker Run
