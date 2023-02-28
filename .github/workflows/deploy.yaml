@@ -48,3 +48,23 @@ jobs:
           --application-name ${{ env.CODE_DEPLOY_APPLICATION_NAME }} \
           --deployment-group-name ${{ env.CODE_DEPLOY_DEPLOYMENT_GROUP_NAME }} \
           --s3-location bucket=$S3_BUCKET_NAME,bundleType=zip,key=$GITHUB_SHA.zip
+
+    # Docker build & push
+    - name: Docker build & push to docker hub
+      run: |
+          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+          docker build --platform linux/amd64 -t ${{ secrets.DOCKER_USERNAME }}/shopping-image -f ./DockerFile .
+          docker push ${{ secrets.DOCKER_USERNAME }}/shoping-image
+          
+      # Docker run
+      - name: EC2 Docker Run
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.AWS_PUBLIC_IP }}
+          username: ubuntu
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            sudo docker rm -f shopping-container # 컨테이너 삭제
+            sudo docker rmi ${{ secrets.DOCKER_USERNAME }}/shopiing-image # 이미지 삭제
+            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/shopping-image
+            sudo docker run -d -p 3307:3000 --name shopping-container ${{ secrets.DOCKER_USERNAME }}/shopping-image
