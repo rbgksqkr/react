@@ -52,8 +52,9 @@ jobs:
       # Docker build & push
       - name: Docker build & push to docker hub
         run: |
+          cd ~/react/shopping
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-          docker build --platform linux/amd64 -t ${{ secrets.DOCKER_USERNAME }}/shopping-image -f ~/react/shopping/DockerFile .
+          docker build --platform linux/amd64 -t ${{ secrets.DOCKER_USERNAME }}/shopping-image -f ./DockerFile .
           docker push ${{ secrets.DOCKER_USERNAME }}/shoping-image
 
       # Docker run
