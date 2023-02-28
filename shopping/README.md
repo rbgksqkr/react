@@ -56,3 +56,4 @@
   - aws에 도커동작 시키기 (aws + docker)
   - github action 설정
     - workflow 스크립트 작성
+    - appspec 스크립트 작성
