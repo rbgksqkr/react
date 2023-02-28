@@ -54,4 +54,5 @@
 - Docker 적용
   - aws에 배포 (react + aws)
   - aws에 도커동작 시키기 (aws + docker)
-  - \*github action 설정
+  - github action 설정
+    - workflow 스크립트 작성
