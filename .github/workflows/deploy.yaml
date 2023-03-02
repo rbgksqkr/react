@@ -82,6 +82,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
+          debug: true
           script: |
             sudo docker rm -f shopping-container # 컨테이너 삭제
             sudo docker rmi ${{ secrets.DOCKER_USERNAME }}/shopiing-image # 이미지 삭제
