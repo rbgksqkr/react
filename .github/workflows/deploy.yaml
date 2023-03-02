@@ -76,7 +76,7 @@ jobs:
 
       # Docker run
       - name: SSH EC2 connect & docker run
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v0.1.8
         with:
           host: ${{ secrets.AWS_PUBLIC_IP }}
           username: ${{ secrets.SSH_USERNAME }}
