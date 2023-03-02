@@ -35,7 +35,7 @@ jobs:
 
       - name: Docker build & push
         run: |
-          docker build --platform linux/amd64 -t ${{ secrets.DOCKER_USERNAME }}/shopping-image .
+          docker build --platform linux/amd64 -t ${{ secrets.DOCKER_USERNAME }}/shopping-image -f ./shopping/Dockerfile .
           docker push ${{ secrets.DOCKER_USERNAME }}/shopping-image
 
       # - name: Set up Docker Buildx
