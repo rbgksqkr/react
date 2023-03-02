@@ -83,8 +83,9 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           debug: true
-          script: |
-            sudo docker rm shopping-container -f # 컨테이너 삭제
-            sudo docker image prune -a -f
-            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/shopping-image
-            sudo docker run -d -p 3307:3000 --name shopping-container ${{ secrets.DOCKER_USERNAME }}/shopping-image
+          script: ls
+          # script: |
+          # sudo docker rm shopping-container -f # 컨테이너 삭제
+          # sudo docker image prune -a -f
+          # sudo docker pull ${{ secrets.DOCKER_USERNAME }}/shopping-image
+          # sudo docker run -d -p 3307:3000 --name shopping-container ${{ secrets.DOCKER_USERNAME }}/shopping-image
