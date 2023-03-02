@@ -34,7 +34,7 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
 
       - name: Docker build
-        run: docker build --platform linux/amd64 -t ${{ secrets.DOCKER_USERNAME }}/shopping-image -f ../shopping/Dockerfile .
+        run: docker build --platform linux/amd64 -t ${{ secrets.DOCKER_USERNAME }}/shopping-image -f ./shopping/DockerFile .
 
       - name: Docker push
         run: docker push ${{ secrets.DOCKER_USERNAME }}/shopping-image
