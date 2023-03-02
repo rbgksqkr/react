@@ -2,7 +2,7 @@
 
 `npm init react-app todo-list`
 
-`npm install sass react-icons react-router-dom classnames next@latest react-loading recoil react-loading-skeleton @react-three/fiber three`
+`npm install sass react-icons react-router-dom classnames next@13.1.1 react-loading recoil react-loading-skeleton @react-three/fiber three`
 
 `npm run dev`
 
