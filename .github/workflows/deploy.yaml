@@ -84,5 +84,5 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           debug: true
           script: |
-          whoami
-          ls -al
+            whoami
+            ls -al
