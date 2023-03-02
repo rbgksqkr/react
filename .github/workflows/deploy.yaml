@@ -75,12 +75,13 @@ jobs:
       #     --s3-location bucket=$S3_BUCKET_NAME,bundleType=zip,key=$GITHUB_SHA.zip
 
       # Docker run
-      - name: EC2 Docker Run
+      - name: SSH EC2 connect & docker run
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.AWS_PUBLIC_IP }}
-          username: ubuntu
+          username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
           script: |
             sudo docker rm -f shopping-container # 컨테이너 삭제
             sudo docker rmi ${{ secrets.DOCKER_USERNAME }}/shopiing-image # 이미지 삭제
