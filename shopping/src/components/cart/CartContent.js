@@ -1,5 +1,10 @@
 import styles from "./CartContent.module.scss";
-import { AiOutlineCheckSquare, AiFillCheckSquare } from "react-icons/ai";
+import {
+  AiOutlineCheckSquare,
+  AiFillCheckSquare,
+  AiOutlineMinusCircle,
+  AiOutlinePlusCircle,
+} from "react-icons/ai";
 import { MdOutlineCancel } from "react-icons/md";
 
 const CartContent = ({
@@ -27,9 +32,19 @@ const CartContent = ({
         </div>
       </div>
       <div className={styles.countContent}>
-        <button onClick={() => handleCountDecrease(id)}>-</button>
+        <div
+          className={styles.decrease}
+          onClick={() => handleCountDecrease(id)}
+        >
+          <AiOutlineMinusCircle />
+        </div>
         <span>{count}</span>
-        <button onClick={() => handleCountIncrease(id)}>+</button>
+        <div
+          className={styles.increase}
+          onClick={() => handleCountIncrease(id)}
+        >
+          <AiOutlinePlusCircle />
+        </div>
       </div>
       <div className={styles.cancelBtn} onClick={() => handleRemove(id)}>
         <MdOutlineCancel />

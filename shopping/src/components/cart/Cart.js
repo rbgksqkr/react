@@ -67,7 +67,14 @@ const Cart = () => {
 
   return (
     <div>
-      <h1>장바구니</h1>
+      <h1
+        style={{
+          marginLeft: "50px",
+          fontFamily: "Lucida Console, Courier, monospace",
+        }}
+      >
+        장바구니 목록
+      </h1>
       <div style={{ display: "flex", gap: "300px" }}>
         <div>
           {cartContents &&
