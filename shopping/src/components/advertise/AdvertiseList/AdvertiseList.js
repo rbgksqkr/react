@@ -1,12 +1,9 @@
 import AdvertiseListItem from "./AdvertiseListItem";
 import styles from "./AdvertiseList.module.scss";
 import AdvertiseButtonList from "../AdvertiseButton/AdvertiseButtonList";
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useRecoilState } from "recoil";
-import {
-  recoilAdvertiseImage,
-  recoilAdvertiseId,
-} from "../../../recoil/advertise/recoilAdvertiseState";
+import { recoilAdvertiseImage } from "../../../recoil/advertise/recoilAdvertiseState";
 
 function useInterval(callback, delay) {
   const savedCallback = useRef(); // 최근에 들어온 callback을 저장할 ref를 하나 만든다.
@@ -30,7 +27,7 @@ function useInterval(callback, delay) {
 const AdvertiseList = () => {
   const [images, setImages] = useRecoilState(recoilAdvertiseImage);
 
-  const intervalRef = useRef(1);
+  const intervalRef = useRef(2);
   const onMouseOver = (id) => {
     setImages(
       images.map((image) =>
@@ -39,11 +36,24 @@ const AdvertiseList = () => {
           : { ...image, active: false }
       )
     );
-    intervalRef.current = id;
+    intervalRef.current = id + 1;
   };
 
+  const slideRef = useRef(null);
+
   useInterval(() => {
-    if (intervalRef.current === 4) intervalRef.current = 1;
+    // console.log(intervalRef.current, slideRef.current.style.transition);
+    if (intervalRef.current === 4) {
+      // if (slideRef.current) {
+      //   slideRef.current.style.transition = "";
+      // }
+      intervalRef.current = 1;
+      // setTimeout(() => {
+      //   if (slideRef.current) {
+      //     slideRef.current.style.transition = "all 500ms ease-in-out";
+      //   }
+      // }, 0);
+    }
     setImages(
       images.map((image) =>
         image.id === intervalRef.current
@@ -51,16 +61,30 @@ const AdvertiseList = () => {
           : { ...image, active: false }
       )
     );
+
     intervalRef.current += 1;
-  }, 1500);
+  }, 2000);
 
   return (
-    <div className={styles.adList}>
+    <div>
       <AdvertiseButtonList images={images} onMouseOver={onMouseOver} />
-      <div>
-        {images.map((image) => (
-          <AdvertiseListItem key={image.id} image={image} />
-        ))}
+
+      <div className={styles.adList}>
+        <div
+          className={styles.imagesList}
+          ref={slideRef}
+          style={{
+            height: `550px*${images.length}`,
+            transition: "all 1s ease-in-out",
+            transform: `translateY(${
+              -1 * ((100 / images.length) * (intervalRef.current - 2))
+            }%)`,
+          }}
+        >
+          {images.map((image) => (
+            <AdvertiseListItem key={image.id} image={image} />
+          ))}
+        </div>
       </div>
     </div>
   );
