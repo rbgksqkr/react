@@ -30,7 +30,8 @@ const AdvertiseList = () => {
   const [slideIndex, setSlideIndex] = useState(2);
 
   const onMouseOver = (id) => {
-    setSlideIndex(id);
+    setSlideIndex(id + 1);
+    setTimeout(() => setDelay(2000), 0);
   };
 
   const slideRef = useRef(null);
@@ -51,7 +52,7 @@ const AdvertiseList = () => {
       setSlideIndex(1);
       setTimeout(() => {
         if (slideRef.current) {
-          slideRef.current.style.transition = "all 1.5s ease-in-out";
+          slideRef.current.style.transition = "all 1s ease-in-out";
         }
       }, 10);
     }
@@ -61,7 +62,7 @@ const AdvertiseList = () => {
 
   useEffect(() => {
     if (slideIndex === 5) {
-      setDelay(1500);
+      setDelay(1000);
     } else {
       setDelay(2000);
     }
@@ -76,13 +77,14 @@ const AdvertiseList = () => {
         currentIndex={slideIndex - 1}
         onMouseOver={onMouseOver}
       />
+      {slideIndex}
       <div className={styles.adList}>
         <div
           className={styles.imagesList}
           ref={slideRef}
           style={{
             height: `550px*${copySlide.length}`,
-            transition: "all 1.5s ease-in-out",
+            transition: "all 1s ease-in-out",
             transform: `translateY(${
               -1 * ((100 / copySlide.length) * (slideIndex - 1))
             }%)`,
