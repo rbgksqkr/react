@@ -1,7 +1,7 @@
 import AdvertiseListItem from "./AdvertiseListItem";
 import styles from "./AdvertiseList.module.scss";
 import AdvertiseButtonList from "../AdvertiseButton/AdvertiseButtonList";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRecoilState } from "recoil";
 import { recoilAdvertiseImage } from "../../../recoil/advertise/recoilAdvertiseState";
 
@@ -10,7 +10,7 @@ function useInterval(callback, delay) {
 
   useEffect(() => {
     savedCallback.current = callback; // callback이 바뀔 때마다 ref를 업데이트 해준다.
-  }, [callback]);
+  }, [callback, delay]);
 
   useEffect(() => {
     function tick() {
@@ -26,63 +26,70 @@ function useInterval(callback, delay) {
 
 const AdvertiseList = () => {
   const [images, setImages] = useRecoilState(recoilAdvertiseImage);
+  const [delay, setDelay] = useState(2000);
+  const [slideIndex, setSlideIndex] = useState(2);
 
-  const intervalRef = useRef(2);
   const onMouseOver = (id) => {
-    setImages(
-      images.map((image) =>
-        image.id === id
-          ? { ...image, active: true }
-          : { ...image, active: false }
-      )
-    );
-    intervalRef.current = id + 1;
+    setSlideIndex(id);
   };
 
   const slideRef = useRef(null);
 
-  useInterval(() => {
-    // console.log(intervalRef.current, slideRef.current.style.transition);
-    if (intervalRef.current === 4) {
-      // if (slideRef.current) {
-      //   slideRef.current.style.transition = "";
-      // }
-      intervalRef.current = 1;
-      // setTimeout(() => {
-      //   if (slideRef.current) {
-      //     slideRef.current.style.transition = "all 500ms ease-in-out";
-      //   }
-      // }, 0);
-    }
-    setImages(
-      images.map((image) =>
-        image.id === intervalRef.current
-          ? { ...image, active: true }
-          : { ...image, active: false }
-      )
-    );
+  const setSlide = () => {
+    const SLIDE_NUM = images.length;
+    const beforeSlide = images[SLIDE_NUM - 1];
+    const afterSlide = images[0];
+    // 무한 슬라이드를 구현하기 위해 새롭게 배열을 만듦.
+    return [beforeSlide, ...images, afterSlide];
+  };
 
-    intervalRef.current += 1;
-  }, 2000);
+  useInterval(() => {
+    if (slideIndex === 5) {
+      if (slideRef.current) {
+        slideRef.current.style.transition = "";
+      }
+      setSlideIndex(1);
+      setTimeout(() => {
+        if (slideRef.current) {
+          slideRef.current.style.transition = "all 1.5s ease-in-out";
+        }
+      }, 10);
+    }
+
+    setSlideIndex((slideIndex) => slideIndex + 1);
+  }, delay);
+
+  useEffect(() => {
+    if (slideIndex === 5) {
+      setDelay(1500);
+    } else {
+      setDelay(2000);
+    }
+  }, [slideIndex]);
+
+  const copySlide = setSlide();
 
   return (
     <div>
-      <AdvertiseButtonList images={images} onMouseOver={onMouseOver} />
-
+      <AdvertiseButtonList
+        images={images}
+        currentIndex={slideIndex - 1}
+        onMouseOver={onMouseOver}
+      />
       <div className={styles.adList}>
         <div
           className={styles.imagesList}
           ref={slideRef}
           style={{
-            height: `550px*${images.length}`,
-            transition: "all 1s ease-in-out",
+            height: `550px*${copySlide.length}`,
+            transition: "all 1.5s ease-in-out",
             transform: `translateY(${
-              -1 * ((100 / images.length) * (intervalRef.current - 2))
+              -1 * ((100 / copySlide.length) * (slideIndex - 1))
             }%)`,
           }}
         >
-          {images.map((image) => (
-            <AdvertiseListItem key={image.id} image={image} />
+          {copySlide.map((image, imageIndex) => (
+            <AdvertiseListItem key={imageIndex} image={image} />
           ))}
         </div>
       </div>

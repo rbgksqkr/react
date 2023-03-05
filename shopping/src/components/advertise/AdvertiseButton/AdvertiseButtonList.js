@@ -1,12 +1,13 @@
 import styles from "./AdvertiseButtonList.module.scss";
 import AdvertiseButtonItem from "./AdvertiseButtonItem";
-const AdvertiseButton = ({ images, onMouseOver }) => {
+const AdvertiseButton = ({ images, currentIndex, onMouseOver }) => {
   return (
     <div className={styles.buttonList}>
-      {images.map((image) => (
+      {images.map((image, imageIndex) => (
         <AdvertiseButtonItem
-          key={image.id}
+          key={imageIndex}
           image={image}
+          currentIndex={currentIndex}
           onMouseOver={onMouseOver}
         />
       ))}
