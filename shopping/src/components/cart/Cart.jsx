@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
-import { recoilCartContent } from "../../recoil/cart/recoilCartState";
+import { recoilCartContent } from "@/recoil/cart/recoilCartState";
+
 import CartContent from "./CartContent";
 import CartResult from "./CartResult";
+
 
 const Cart = () => {
   const [cartContents, setCartContents] = useRecoilState(recoilCartContent);

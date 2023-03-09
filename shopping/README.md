@@ -3,6 +3,7 @@
 `npm init react-app todo-list`
 
 `npm install sass react-icons react-router-dom classnames next@13.1.1 react-loading recoil react-loading-skeleton @react-three/fiber three`
+`npm install --save typescript @types/node @types/react @types/react-dom @types/jest`
 
 `npm run dev`
 
@@ -62,3 +63,5 @@
   - workflow 스크립트 작성
   - appspec 스크립트 작성
 - javascript to typescript 바꾸기
+  - import 오류 - tsconfig에서 설정한 paths 로 안불러와짐
+  - 타입 오류

@@ -1,15 +1,14 @@
+import Cart from "@/components/cart/Cart";
 import Header from "@/components/common/header/Header";
-import MyPage from "@/components/common/navbar/MyPage";
 import Navbar from "@/components/common/navbar/Navbar";
-
-const Mypage = () => {
+const CartPage = () => {
   return (
     <div>
       <Header />
       <Navbar />
-      <MyPage />
+      <Cart />
     </div>
   );
 };
 
-export default Mypage;
+export default CartPage;

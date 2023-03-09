@@ -3,7 +3,7 @@ import styles from "./AdvertiseList.module.scss";
 import AdvertiseButtonList from "../AdvertiseButton/AdvertiseButtonList";
 import { useEffect, useRef, useState } from "react";
 import { useRecoilState } from "recoil";
-import { recoilAdvertiseImage } from "../../../recoil/advertise/recoilAdvertiseState";
+import { recoilAdvertiseImage } from "@/recoil/advertise/recoilAdvertiseState";
 
 function useInterval(callback, delay) {
   const savedCallback = useRef(); // 최근에 들어온 callback을 저장할 ref를 하나 만든다.

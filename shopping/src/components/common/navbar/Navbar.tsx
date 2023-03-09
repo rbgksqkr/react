@@ -1,4 +1,4 @@
-import { AiOutlineShoppingCart, AiFillCaretDown } from "react-icons/ai";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import { MdPersonOutline } from "react-icons/md";
 import { useState } from "react";
 import styles from "./Navbar.module.scss";

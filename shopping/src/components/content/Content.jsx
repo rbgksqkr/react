@@ -5,7 +5,7 @@ import { useRecoilState } from "recoil";
 import {
   recoilNewContentList,
   recoilRecommendContentList,
-} from "../../recoil/content/recoilContentState";
+} from "@/recoil/content/recoilContentState";
 import SkeletonContent from "../common/loader/SkeletonContent";
 
 const Content = () => {

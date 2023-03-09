@@ -1,5 +1,15 @@
 import { atom } from "recoil";
 
+type cart = {
+  id: number;
+  name: string;
+  price: number;
+  src: string;
+  count: number;
+  delivery: number;
+  checked: boolean
+};
+
 const cartContentInitialState = [
   {
     id: 1,

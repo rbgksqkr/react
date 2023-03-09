@@ -1,7 +1,7 @@
-import AdvertiseList from "../src/components/advertise/AdvertiseList/AdvertiseList";
-import Content from "../src/components/content/Content";
-import Header from "../src/components/common/header/Header";
-import Navbar from "../src/components/common/navbar/Navbar";
+import AdvertiseList from "@/components/advertise/AdvertiseList/AdvertiseList";
+import Content from "@/components/content/Content";
+import Header from "@/components/common/header/Header";
+import Navbar from "@/components/common/navbar/Navbar";
 
 const Index = () => {
   return (
