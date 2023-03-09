@@ -58,6 +58,7 @@
 - Docker 적용
   - aws에 배포 (react + aws)
   - \*aws에 도커동작 시키기 (aws + docker) - i/o timeout 오류로 적용 미완
-  - github action 설정
-    - workflow 스크립트 작성
-    - appspec 스크립트 작성
+- github action 설정
+  - workflow 스크립트 작성
+  - appspec 스크립트 작성
+- javascript to typescript 바꾸기
