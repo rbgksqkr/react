@@ -1,4 +1,4 @@
-import Login from "@/components/common/header/Login";
+import Login from "../src/components/common/header/Login";
 const LoginPage = () => {
   return (
     <div>

@@ -1,7 +1,7 @@
 import styles from "./CategoryList.module.scss";
 import CategoryListItem from "./CategoryListItem";
 import { useRecoilState } from "recoil";
-import { recoilCategoryList } from "@/recoil/category/recoilCategoryState";
+import { recoilCategoryList } from "../../recoil/category/recoilCategoryState";
 
 const CategoryList = () => {
   const [categories, setCategories] = useRecoilState(recoilCategoryList);

@@ -33,6 +33,7 @@ const ContentDetail = ({ contentDetail }) => {
       src: contentDetail.src,
       count: Number(contentDetail.count),
       delivery: Number(contentDetail.delivery),
+      checked: false,
     };
 
     const checkDuplication = cartContents.findIndex(

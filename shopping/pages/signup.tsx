@@ -1,4 +1,4 @@
-import Signup from "@/components/common/header/Signup";
+import Signup from "../src/components/common/header/Signup";
 const SignUp = () => {
   return (
     <>

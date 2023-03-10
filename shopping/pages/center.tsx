@@ -1,6 +1,6 @@
-import Header from "@/components/common/header/Header";
-import Navbar from "@/components/common/navbar/Navbar";
-import Center from "@/components/common/header/Center";
+import Header from "../src/components/common/header/Header";
+import Navbar from "../src/components/common/navbar/Navbar";
+import Center from "../src/components/common/header/Center";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 
