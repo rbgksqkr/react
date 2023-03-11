@@ -13,7 +13,7 @@ const Cart = () => {
     totalPayPrice: 0,
   });
 
-  const handleToggle = (id) => {
+  const handleToggle = (id: number) => {
     setCartContents(
       cartContents.map((content) =>
         content.id === id ? { ...content, checked: !content.checked } : content
@@ -21,11 +21,11 @@ const Cart = () => {
     );
   };
 
-  const handleRemove = (id) => {
+  const handleRemove = (id: number) => {
     setCartContents(cartContents.filter((content) => content.id !== id));
   };
 
-  const handleCountIncrease = (id) => {
+  const handleCountIncrease = (id: number) => {
     setCartContents(
       cartContents.map((content) =>
         content.id === id ? { ...content, count: content.count + 1 } : content
@@ -33,7 +33,7 @@ const Cart = () => {
     );
   };
 
-  const handleCountDecrease = (id) => {
+  const handleCountDecrease = (id: number) => {
     setCartContents(
       cartContents.map((content) =>
         content.id === id

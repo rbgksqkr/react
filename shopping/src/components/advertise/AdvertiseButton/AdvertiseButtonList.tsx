@@ -3,7 +3,7 @@ import AdvertiseButtonItem from "./AdvertiseButtonItem";
 const AdvertiseButton = ({ images, currentIndex, onMouseOver }) => {
   return (
     <div className={styles.buttonList}>
-      {images.map((image, imageIndex) => (
+      {images.map((image:object, imageIndex:number) => (
         <AdvertiseButtonItem
           key={imageIndex}
           image={image}

@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRecoilState } from "recoil";
 import { recoilAdvertiseImage } from "../../../recoil/advertise/recoilAdvertiseState";
 
-function useInterval(callback, delay) {
+function useInterval(callback: Function, delay: number) {
   const savedCallback = useRef(null); // 최근에 들어온 callback을 저장할 ref를 하나 만든다.
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const AdvertiseList = () => {
   const [delay, setDelay] = useState(2000);
   const [slideIndex, setSlideIndex] = useState(2);
 
-  const onMouseOver = (id) => {
+  const onMouseOver = (id: number) => {
     setSlideIndex(id + 1);
     setTimeout(() => setDelay(2000), 0);
   };

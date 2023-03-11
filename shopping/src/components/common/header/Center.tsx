@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 
 const Center = (props) => {
-  const mesh = useRef();
+  const mesh = useRef(null);
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
 
