@@ -1,6 +1,12 @@
+import { cartResultData } from "../../types/cart/content";
 import styles from "./CartResult.module.scss";
 
-const CartResult = ({ resultData }) => {
+interface IProps {
+  resultData : cartResultData
+};
+
+const CartResult = (props: IProps) => {
+  const { resultData } = props;
   const { totalPrice, totalDelivery, totalPayPrice } = resultData;
   return (
     <div className={styles.cartResult}>

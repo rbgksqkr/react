@@ -6,15 +6,17 @@ import {
   AiOutlinePlusCircle,
 } from "react-icons/ai";
 import { MdOutlineCancel } from "react-icons/md";
-import PropTypes from 'prop-types';
+import { cartContent } from "../../types/cart/content";
+interface IProps {
+  content: cartContent,
+  handleToggle: (id:number) => void,
+  handleRemove: (id:number) => void,
+  handleCountIncrease: (id:number) => void,
+  handleCountDecrease: (id:number) => void,
+}
 
-const CartContent = ({
-  content,
-  handleToggle,
-  handleRemove,
-  handleCountIncrease,
-  handleCountDecrease,
-}) => {
+const CartContent = (props: IProps) => {
+  const {  content, handleToggle,handleRemove, handleCountIncrease, handleCountDecrease} = props;
   const { id, name, src, checked, price, count } = content;
 
   return (
@@ -53,13 +55,5 @@ const CartContent = ({
     </div>
   );
 };
-
-CartContent.propTypes = {
-  content: PropTypes.object,
-  handleToggle: PropTypes.func,
-  handleRemove: PropTypes.func,
-  handleCountIncrease: PropTypes.func,
-  handleCountDecrease: PropTypes.func,
-}
 
 export default CartContent;

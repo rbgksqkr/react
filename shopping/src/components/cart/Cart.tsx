@@ -4,7 +4,6 @@ import { recoilCartContent } from "../../recoil/cart/recoilCartState";
 import CartContent from "./CartContent";
 import CartResult from "./CartResult";
 
-
 const Cart = () => {
   const [cartContents, setCartContents] = useRecoilState(recoilCartContent);
   const [resultData, setResultData] = useState({
